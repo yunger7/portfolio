@@ -27,6 +27,7 @@ export default function Home() {
 
 					"& img": {
 						zIndex: -1,
+						userSelect: "none",
 					},
 
 					"& > span": {
@@ -46,12 +47,17 @@ export default function Home() {
 					sx={{
 						position: "absolute",
 						left: "10%",
-						top: "25%",
+						top: "35%",
 						color: palette.nord6,
 					}}
 				>
-					<Typography variant="h1">Luís Galete</Typography>
-					<Typography component="p" variant="h2">
+					<Typography
+						variant="h1"
+						sx={{ fontSize: "4rem !important", lineHeight: 1.1 }}
+					>
+						Luís Galete
+					</Typography>
+					<Typography component="p" variant="h2" sx={{ pl: 0.5 }}>
 						Is building{" "}
 						<Box component="span" sx={{ color: "primary.main" }}>
 							cool
