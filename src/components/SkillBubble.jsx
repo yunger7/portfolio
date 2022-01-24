@@ -2,7 +2,7 @@ import { Box, alpha } from "@mui/material";
 import { palette } from "../styles/theme";
 import { floating } from "../styles/Floating.module.css";
 
-export function SkillBubble({ icon }) {
+export function SkillBubble({ icon, delay }) {
 	return (
 		<Box
 			className={floating}
@@ -16,6 +16,7 @@ export function SkillBubble({ icon }) {
 				display: "flex",
 				alignItems: "center",
 				justifyContent: "center",
+				...(delay && { animationDelay: `${delay}ms !important` }),
 			}}
 		>
 			{icon}
