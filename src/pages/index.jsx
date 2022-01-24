@@ -83,18 +83,19 @@ export default function Home() {
 					color={theme.palette.background.default}
 				/>
 			</Box>
-			<Container component="main" maxWidth="xl" sx={{ pb: 10 }}>
-				<Box
-					sx={{
-						width: "100vw",
-						maxWidth: "100%",
-						height: "100vh",
-						maxHeight: "100%",
-						display: "flex",
-						alignItems: "center",
-						justifyContent: "center",
-					}}
-				>
+			<Box
+				sx={{
+					pb: 10,
+					width: "100vw",
+					maxWidth: "100%",
+					height: "100vh",
+					maxHeight: "100%",
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
+				}}
+			>
+				<Container component="section" maxWidth="xl">
 					<Grid container>
 						<Grid
 							item
@@ -149,8 +150,32 @@ export default function Home() {
 							</Grid>
 						</Grid>
 					</Grid>
-				</Box>
-			</Container>
+				</Container>
+			</Box>
+			<Box
+				sx={{
+					position: "relative",
+					pt: "200px", // removes overlap from WaveDivider
+					width: "100vw",
+					maxWidth: "100%",
+					height: "100vh",
+					maxHeight: "100%",
+					bgcolor: palette.nord6,
+					// display: "flex",
+					// alignItems: "center",
+					// justifyContent: "center",
+				}}
+			>
+				<WaveDivider
+					invert
+					height={150}
+					width={125}
+					color={theme.palette.background.default}
+				/>
+				<Container component="section" maxWidth="xl" sx={{ pb: 10 }}>
+					<Typography variant="h2">Testing</Typography>
+				</Container>
+			</Box>
 		</Box>
 	);
 }
