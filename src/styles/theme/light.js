@@ -10,7 +10,8 @@ export const light = createTheme(theme, {
 			disabled: alpha(palette.nord3, 0.5),
 		},
 		background: {
-			default: lighten(palette.nord6, 0.2),
+			// default: lighten(palette.nord6, 0.2),
+			default: "#ffffff",
 			paper: "#ffffff",
 		},
 		divider: alpha(palette.nord4, 0.8),

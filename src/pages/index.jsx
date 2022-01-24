@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Typography, Container, Box, useTheme } from "@mui/material";
 
-import { WaveDivider } from "../components";
+import { WaveDivider, Blob } from "../components";
 import { palette } from "../styles/theme";
 
 import BackgroundImage from "../../public/background.jpg";
@@ -74,17 +74,26 @@ export default function Home() {
 				/>
 			</Box>
 			<Container component="main" maxWidth="lg" sx={{ pb: 10 }}>
-				<Typography variant="h2">I have the CONTENT</Typography>
-				<Typography variant="body1">
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi
-					debitis vel expedita nam nesciunt sit voluptas? Dignissimos
-					consectetur suscipit nam, quam ratione hic doloremque. Ullam tempora
-					sunt velit voluptatibus numquam. Lorem ipsum dolor sit amet
-					consectetur adipisicing elit. Asperiores vero odit repellendus maiores
-					quibusdam expedita ipsam atque neque provident recusandae, laboriosam,
-					molestiae perspiciatis repudiandae, explicabo iusto? Explicabo at ex
-					dolorem?
-				</Typography>
+				<Box
+					sx={{
+						width: "100vw",
+						maxWidth: "100%",
+						height: "100vh",
+						maxHeight: "100%",
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+					}}
+				>
+					<Blob>
+						<Typography variant="body1" align="center">
+							Olá! Meu nome é Luís Galete. <br /> Guiado pela criatividade e
+							motivado por ideias, encontrei na programação uma paixão, a
+							ferramenta perfeita para dar vida a ideias, que ainda se encontram
+							aprisionadas em uma folha de papel.
+						</Typography>
+					</Blob>
+				</Box>
 			</Container>
 		</Box>
 	);
