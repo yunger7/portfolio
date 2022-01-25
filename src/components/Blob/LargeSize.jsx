@@ -1,13 +1,16 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import anime from "animejs";
-import { Box, lighten } from "@mui/material";
+import { v4 as uuidv4 } from "uuid";
+import { NoSsr } from "@mui/material";
 
-import { palette } from "../styles/theme";
+import { palette } from "../../styles/theme";
 
-export function Blob({ children }) {
+export function LargeSize() {
+	const [blobId] = useState(uuidv4());
+
 	useEffect(() => {
 		anime({
-			targets: "#blob-path",
+			targets: `#blob-${blobId} path`,
 			d: [
 				{
 					value:
@@ -30,7 +33,7 @@ export function Blob({ children }) {
 		});
 
 		anime({
-			targets: "#blob-g",
+			targets: `$blob-${blobId} g`,
 			transform: [
 				{
 					value: "translate(380.41846545055114 368.76411598696245)",
@@ -51,44 +54,22 @@ export function Blob({ children }) {
 	}, []);
 
 	return (
-		<Box
-			sx={{
-				position: "relative",
-				display: "flex",
-				alignItems: "center",
-				justifyContent: "center",
-				color: "#ffffff",
-			}}
-		>
+		<NoSsr>
 			<svg
-				id="blob"
+				id={`blob-${blobId}`}
 				viewBox="0 0 750 750"
 				width="750"
 				height="750"
 				xmlns="http://www.w3.org/2000/svg"
 				version="1.1"
 			>
-				<g
-					id="blob-g"
-					transform="translate(380.41846545055114 368.76411598696245)"
-				>
+				<g transform="translate(380.41846545055114 368.76411598696245)">
 					<path
-						id="blob-path"
 						d="M224.3 -180.4C277.6 -112.1 298.7 -19.5 283.1 70.9C267.4 161.3 215.1 249.6 137.7 287.4C60.3 325.2 -42.1 312.6 -123 268.6C-203.9 224.6 -263.3 149.1 -287.2 60.9C-311 -27.4 -299.4 -128.4 -245.6 -196.9C-191.8 -265.3 -95.9 -301.1 -5.2 -297C85.5 -292.9 171 -248.7 224.3 -180.4"
 						fill={palette.nord9}
 					></path>
 				</g>
 			</svg>
-			<Box
-				sx={{
-					position: "absolute",
-					top: "50%",
-					left: "50%",
-					transform: "translate(-50%, -50%)",
-				}}
-			>
-				{children}
-			</Box>
-		</Box>
+		</NoSsr>
 	);
 }

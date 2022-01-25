@@ -1,3 +1,3 @@
 export * from "./WaveDivider";
-export * from "./Blob";
+export { Blob } from "./Blob";
 export * from "./SkillBubble";
