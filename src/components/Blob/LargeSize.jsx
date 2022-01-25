@@ -5,7 +5,7 @@ import { NoSsr } from "@mui/material";
 
 import { palette } from "../../styles/theme";
 
-export function LargeSize() {
+export function LargeSize({ color }) {
 	const [blobId] = useState(uuidv4());
 
 	useEffect(() => {
@@ -66,7 +66,7 @@ export function LargeSize() {
 				<g transform="translate(380.41846545055114 368.76411598696245)">
 					<path
 						d="M224.3 -180.4C277.6 -112.1 298.7 -19.5 283.1 70.9C267.4 161.3 215.1 249.6 137.7 287.4C60.3 325.2 -42.1 312.6 -123 268.6C-203.9 224.6 -263.3 149.1 -287.2 60.9C-311 -27.4 -299.4 -128.4 -245.6 -196.9C-191.8 -265.3 -95.9 -301.1 -5.2 -297C85.5 -292.9 171 -248.7 224.3 -180.4"
-						fill={palette.nord9}
+						fill={color}
 					></path>
 				</g>
 			</svg>

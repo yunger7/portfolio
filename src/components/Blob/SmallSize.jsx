@@ -3,9 +3,7 @@ import anime from "animejs";
 import { v4 as uuidv4 } from "uuid";
 import { NoSsr } from "@mui/material";
 
-import { palette } from "../../styles/theme";
-
-export function SmallSize() {
+export function SmallSize({ color }) {
 	const [blobId] = useState(uuidv4());
 
 	useEffect(() => {
@@ -66,7 +64,7 @@ export function SmallSize() {
 				<g transform="translate(249.32284240123872 261.5945941295426)">
 					<path
 						d="M170 -101.5C203.2 -40.7 201.2 37.2 167 93.4C132.8 149.6 66.4 184.2 1.3 183.4C-63.8 182.7 -127.6 146.6 -162.5 90C-197.5 33.3 -203.5 -43.8 -171.6 -103.9C-139.7 -164 -69.9 -207 -0.7 -206.6C68.4 -206.2 136.8 -162.3 170 -101.5"
-						fill={palette.nord9}
+						fill={color}
 					></path>
 				</g>
 			</svg>

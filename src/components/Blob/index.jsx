@@ -1,18 +1,19 @@
 import { Box } from "@mui/material";
+import { palette } from "../../styles/theme";
 
 import { LargeSize } from "./LargeSize";
 import { MediumSize } from "./MediumSize";
 import { SmallSize } from "./SmallSize";
 
-export function Blob({ children, size = "large" }) {
+export function Blob({ children, size = "large", color = palette.nord9 }) {
 	function renderBlob(size) {
 		switch (size) {
 			case "large":
-				return <LargeSize />;
+				return <LargeSize color={color} />;
 			case "medium":
-				return <MediumSize />;
+				return <MediumSize color={color} />;
 			case "small":
-				return <SmallSize />;
+				return <SmallSize color={color} />;
 		}
 	}
 
@@ -26,7 +27,7 @@ export function Blob({ children, size = "large" }) {
 				color: "#ffffff",
 			}}
 		>
-			{renderBlob(size)}
+			{renderBlob(size, color)}
 			<Box
 				sx={{
 					position: "absolute",
