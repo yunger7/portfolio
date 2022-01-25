@@ -3,8 +3,6 @@ import anime from "animejs";
 import { v4 as uuidv4 } from "uuid";
 import { NoSsr } from "@mui/material";
 
-import { palette } from "../../styles/theme";
-
 export function MediumSize({ color }) {
 	const [blobId] = useState(uuidv4());
 
