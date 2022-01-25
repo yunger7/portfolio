@@ -27,7 +27,7 @@ export function Blob({ children, size = "large", color = palette.nord9 }) {
 				color: "#ffffff",
 			}}
 		>
-			{renderBlob(size, color)}
+			{renderBlob(size)}
 			<Box
 				sx={{
 					position: "absolute",
