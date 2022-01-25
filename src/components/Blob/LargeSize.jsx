@@ -49,7 +49,7 @@ export function LargeSize({ color }) {
 			duration: 15000,
 			loop: true,
 		});
-	}, []);
+	}, [blobId]);
 
 	return (
 		<NoSsr>
