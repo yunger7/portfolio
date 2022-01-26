@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export function MediumSize({ color }) {
+export function MediumSize({ color, delay }) {
 	return (
 		<svg
 			viewBox="0 0 600 600"
@@ -30,7 +30,12 @@ export function MediumSize({ color }) {
 							"M194.4 -107.3C237.3 -38 247.3 55.2 209.4 124.1C171.5 193 85.7 237.5 -0.4 237.8C-86.6 238 -173.2 194 -215.1 122.8C-256.9 51.7 -254 -46.7 -210.7 -116.2C-167.4 -185.7 -83.7 -226.3 -4 -224C75.8 -221.8 151.6 -176.5 194.4 -107.3",
 						],
 					}}
-					transition={{ duration: 15, repeat: Infinity, repeatType: "reverse" }}
+					transition={{
+						delay,
+						duration: 15,
+						repeat: Infinity,
+						repeatType: "reverse",
+					}}
 				></motion.path>
 			</motion.g>
 		</svg>

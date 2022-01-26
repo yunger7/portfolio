@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export function LargeSize({ color }) {
+export function LargeSize({ color, delay }) {
 	return (
 		<svg
 			viewBox="0 0 750 750"
@@ -29,7 +29,12 @@ export function LargeSize({ color }) {
 							"M246.6 -201.3C303 -126 320.7 -24.4 296.8 62.8C273 150 207.7 222.8 125.2 264.2C42.7 305.5 -57 315.4 -135.1 278.5C-213.3 241.7 -269.9 158.1 -286.7 69.7C-303.5 -18.7 -280.3 -111.9 -225.9 -186.8C-171.5 -261.8 -85.7 -318.4 4.7 -322.1C95.1 -325.9 190.2 -276.7 246.6 -201.3",
 						],
 					}}
-					transition={{ duration: 15, repeat: Infinity, repeatType: "reverse" }}
+					transition={{
+						delay,
+						duration: 15,
+						repeat: Infinity,
+						repeatType: "reverse",
+					}}
 					fill={color}
 				></motion.path>
 			</motion.g>

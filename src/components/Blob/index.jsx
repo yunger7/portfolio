@@ -5,15 +5,20 @@ import { LargeSize } from "./LargeSize";
 import { MediumSize } from "./MediumSize";
 import { SmallSize } from "./SmallSize";
 
-export function Blob({ children, size = "large", color = palette.nord9 }) {
+export function Blob({
+	children,
+	delay = 0,
+	size = "large",
+	color = palette.nord9,
+}) {
 	function renderBlob(size) {
 		switch (size) {
 			case "large":
-				return <LargeSize color={color} />;
+				return <LargeSize color={color} delay={delay} />;
 			case "medium":
-				return <MediumSize color={color} />;
+				return <MediumSize color={color} delay={delay} />;
 			case "small":
-				return <SmallSize color={color} />;
+				return <SmallSize color={color} delay={delay} />;
 		}
 	}
 

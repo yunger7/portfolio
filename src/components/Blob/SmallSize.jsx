@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export function SmallSize({ color }) {
+export function SmallSize({ color, delay }) {
 	return (
 		<svg
 			viewBox="0 0 500 500"
@@ -30,7 +30,12 @@ export function SmallSize({ color }) {
 							"M170 -95.8C206.1 -35.7 211.3 44.7 177.8 102.2C144.3 159.7 72.2 194.3 4.5 191.7C-63.2 189.1 -126.3 149.3 -162.1 90.4C-197.9 31.6 -206.3 -46.2 -174.8 -103.8C-143.2 -161.3 -71.6 -198.7 -2.3 -197.3C67 -196 133.9 -156 170 -95.8",
 						],
 					}}
-					transition={{ duration: 15, repeat: Infinity, repeatType: "reverse" }}
+					transition={{
+						delay,
+						duration: 5,
+						repeat: Infinity,
+						repeatType: "reverse",
+					}}
 				></motion.path>
 			</motion.g>
 		</svg>
