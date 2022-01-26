@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export function SmallSize({ color, delay }) {
+export function SmallSize({ delay, setHover }) {
 	return (
 		<svg
 			viewBox="0 0 500 500"
@@ -21,7 +21,6 @@ export function SmallSize({ color, delay }) {
 				transition={{ duration: 15, repeat: Infinity, repeatType: "reverse" }}
 			>
 				<motion.path
-					fill={color}
 					d="M170 -101.5C203.2 -40.7 201.2 37.2 167 93.4C132.8 149.6 66.4 184.2 1.3 183.4C-63.8 182.7 -127.6 146.6 -162.5 90C-197.5 33.3 -203.5 -43.8 -171.6 -103.9C-139.7 -164 -69.9 -207 -0.7 -206.6C68.4 -206.2 136.8 -162.3 170 -101.5"
 					animate={{
 						d: [
@@ -36,6 +35,8 @@ export function SmallSize({ color, delay }) {
 						repeat: Infinity,
 						repeatType: "reverse",
 					}}
+					onMouseEnter={() => setHover(true)}
+					onMouseLeave={() => setHover(false)}
 				></motion.path>
 			</motion.g>
 		</svg>

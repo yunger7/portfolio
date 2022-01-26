@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export function LargeSize({ color, delay }) {
+export function LargeSize({ delay, setHover }) {
 	return (
 		<svg
 			viewBox="0 0 750 750"
@@ -35,7 +35,8 @@ export function LargeSize({ color, delay }) {
 						repeat: Infinity,
 						repeatType: "reverse",
 					}}
-					fill={color}
+					onMouseEnter={() => setHover(true)}
+					onMouseLeave={() => setHover(false)}
 				></motion.path>
 			</motion.g>
 		</svg>
