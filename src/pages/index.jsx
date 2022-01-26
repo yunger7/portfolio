@@ -5,10 +5,16 @@ import {
 	Container,
 	Box,
 	Grid,
+	TextField,
+	Stack,
+	Button,
 	Link as MuiLink,
 	useTheme,
 } from "@mui/material";
-import { ChevronRight as ArrowRightIcon } from "@mui/icons-material";
+import {
+	ChevronRight as ArrowRightIcon,
+	Favorite as HeartIcon,
+} from "@mui/icons-material";
 import {
 	SiJavascript as JavascriptIcon,
 	SiHtml5 as HtmlIcon,
@@ -281,6 +287,107 @@ export default function Home() {
 							<ArrowRightIcon />
 						</MuiLink>
 					</Typography>
+				</Container>
+			</Box>
+			<Box
+				sx={{
+					position: "relative",
+					pt: "235px", // removes overlap from WaveDivider
+					width: "100vw",
+					maxWidth: "100%",
+					height: "100vh",
+					maxHeight: "100%",
+				}}
+			>
+				<WaveDivider invert height={135} width={115} color={palette.nord6} />
+				<Container
+					component="section"
+					maxWidth="xl"
+					sx={{
+						width: 1,
+						height: 1,
+						pb: 4,
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "stretch",
+					}}
+				>
+					<Typography variant="h2" align="center" sx={{ mb: 8 }}>
+						Que tal dar vida a mais uma ideia?{" "}
+						<Box component="span" sx={{ color: "primary.main" }}>
+							Juntos
+						</Box>
+						.
+					</Typography>
+					<Stack
+						noValidate
+						component="form"
+						autoComplete="off"
+						alignItems="center"
+						spacing={4}
+						onSubmit={() => console.log("SUBMIT")}
+						sx={{
+							maxWidth: theme => theme.breakpoints.values.md,
+							width: "100%",
+							mx: "auto",
+							flex: 1,
+						}}
+					>
+						<TextField
+							required
+							fullWidth
+							id="name"
+							label="Nome"
+							variant="outlined"
+						/>
+						<TextField
+							required
+							fullWidth
+							type="email"
+							id="email"
+							label="Email"
+							variant="outlined"
+						/>
+						<TextField
+							required
+							multiline
+							fullWidth
+							id="message"
+							label="Mensagem"
+							variant="outlined"
+							rows={4}
+						/>
+						<Button
+							fullWidth
+							type="submit"
+							variant="contained"
+							color="primary"
+							sx={{ maxWidth: 200 }}
+						>
+							Enviar
+						</Button>
+					</Stack>
+					<Box>
+						<Typography variant="body2" align="center">
+							&copy; Luís Galete - {new Date().getFullYear()}
+						</Typography>
+						<Typography
+							variant="body2"
+							align="center"
+							sx={{
+								display: "flex",
+								alignItems: "center",
+								justifyContent: "center",
+							}}
+						>
+							Made with{" "}
+							<HeartIcon
+								color="primary"
+								sx={{ fontSize: "inherit", mx: 0.5 }}
+							/>{" "}
+							and Javascript
+						</Typography>
+					</Box>
 				</Container>
 			</Box>
 		</Box>
