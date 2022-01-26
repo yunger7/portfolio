@@ -68,7 +68,7 @@ export function ProjectPreview({
 						</Carousel>
 					</Box>
 				)}
-				<DialogContent sx={{ pt: 0 }}>
+				<DialogContent sx={[images && { pt: 0 }]}>
 					<Typography gutterBottom variant="h3" id={projectName}>
 						{projectName}
 					</Typography>
