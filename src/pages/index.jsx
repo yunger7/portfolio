@@ -1,6 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Typography, Container, Box, Grid, useTheme } from "@mui/material";
+import {
+	Typography,
+	Container,
+	Box,
+	Grid,
+	Link as MuiLink,
+	useTheme,
+} from "@mui/material";
+import { ChevronRight as ArrowRightIcon } from "@mui/icons-material";
 import {
 	SiJavascript as JavascriptIcon,
 	SiHtml5 as HtmlIcon,
@@ -12,7 +20,7 @@ import {
 	SiReact as ReactIcon,
 } from "react-icons/si";
 
-import { WaveDivider, Blob, SkillBubble } from "../components";
+import { WaveDivider, Blob, SkillBubble, ProjectPreview } from "../components";
 import { palette } from "../styles/theme";
 
 import BackgroundImage from "../../public/background.jpg";
@@ -173,7 +181,106 @@ export default function Home() {
 					color={theme.palette.background.default}
 				/>
 				<Container component="section" maxWidth="xl" sx={{ pb: 10 }}>
-					<Typography variant="h2">Testing</Typography>
+					<Typography variant="h2">Aqui estão alguns exemplos</Typography>
+					<Grid container>
+						<Grid item xs={3}>
+							<ProjectPreview
+								name="yunger.dev"
+								description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+								ipsum? Voluptatem, id temporibus. Nulla totam, ipsa, quae fugit nam
+								iusto numquam ex praesentium, magni consectetur aspernatur nobis
+								labore alias corporis!"
+								animationDelay={3}
+								images={["/yunger-dev-1.png"]}
+								sourceCode="https://github.com/yunger7/yunger.dev"
+								website="https://yunger.dev/"
+								logo={
+									<Image
+										unselectable="on"
+										src="/projects/yunger-dev/logo.png"
+										alt="yunger.dev logo"
+										width={75}
+										height={75}
+									/>
+								}
+							/>
+						</Grid>
+						<Grid item xs={3}>
+							<ProjectPreview
+								name="Progretion"
+								description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+								ipsum? Voluptatem, id temporibus. Nulla totam, ipsa, quae fugit nam
+								iusto numquam ex praesentium, magni consectetur aspernatur nobis
+								labore alias corporis!"
+								animationDelay={0.2}
+								// images={[]}
+								website="https://progretion.com/"
+								logo={
+									<Image
+										unselectable="on"
+										src="/projects/progretion/logo.png"
+										alt="progretion logo"
+										width={75}
+										height={75}
+									/>
+								}
+							/>
+						</Grid>
+						<Grid item xs={3}>
+							<ProjectPreview
+								name="Axew"
+								description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+								ipsum? Voluptatem, id temporibus. Nulla totam, ipsa, quae fugit nam
+								iusto numquam ex praesentium, magni consectetur aspernatur nobis
+								labore alias corporis!"
+								animationDelay={1.5}
+								// images={[]}
+								website="https://templates.yunger.dev/axew"
+								logo={
+									<Image
+										src="/projects/axew/logo.png"
+										alt="axew logo"
+										width={75}
+										height={75}
+									/>
+								}
+							/>
+						</Grid>
+						<Grid item xs={3}>
+							<ProjectPreview
+								name="Podcastr"
+								description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+								ipsum? Voluptatem, id temporibus. Nulla totam, ipsa, quae fugit nam
+								iusto numquam ex praesentium, magni consectetur aspernatur nobis
+								labore alias corporis!"
+								animationDelay={2.5}
+								// images={[]}
+								sourceCode="https://github.com/yunger7/podcastr"
+								logo={
+									<Image
+										src="/projects/podcastr/logo.svg"
+										alt="podcastr logo"
+										width={125}
+										height={125}
+									/>
+								}
+							/>
+						</Grid>
+					</Grid>
+					<Typography variant="h6" align="right">
+						Veja o restante no{" "}
+						<MuiLink
+							href="https://github.com/yunger7"
+							target="_blank"
+							sx={{
+								display: "inline-flex",
+								alignItems: "center",
+							}}
+						>
+							GitHub
+							<ArrowRightIcon />
+						</MuiLink>
+					</Typography>
 				</Container>
 			</Box>
 		</Box>
