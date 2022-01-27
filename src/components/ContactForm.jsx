@@ -1,12 +1,26 @@
 import { useState } from "react";
-import { Stack, TextField, Button } from "@mui/material";
+import {
+	Stack,
+	TextField,
+	Button,
+	Snackbar,
+	Alert,
+	Slide,
+} from "@mui/material";
+import { LoadingButton } from "@mui/lab";
 
 export function ContactForm() {
 	const [name, setName] = useState({ value: "", error: false });
 	const [email, setEmail] = useState({ value: "", error: false });
 	const [message, setMessage] = useState({ value: "", error: false });
+	const [loading, setLoading] = useState(false);
+	const [snackbar, setSnackbar] = useState({
+		open: false,
+		message: undefined,
+		severity: undefined,
+	});
 
-	function handleSubmit(event) {
+	async function handleSubmit(event) {
 		event.preventDefault();
 
 		setName(name => ({ ...name, error: false }));
@@ -39,7 +53,46 @@ export function ContactForm() {
 			return;
 		}
 
-		console.log("SUBMITTED");
+		setLoading(true);
+
+		try {
+			console.log("[INFO]: Sending message");
+
+			const responseRaw = await fetch("/api/contact", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					name: name.value,
+					email: email.value,
+					message: message.value,
+				}),
+			});
+
+			const data = await responseRaw.json();
+
+			if (!data.success) {
+				throw new Error("Failed to send message");
+			}
+
+			setSnackbar({
+				open: true,
+				message: "Mensagem enviada!",
+				severity: "success",
+			});
+			setName({ value: "", error: false });
+			setEmail({ value: "", error: false });
+			setMessage({ value: "", error: false });
+		} catch (error) {
+			setSnackbar({
+				open: true,
+				message: "Houve um problema ao enviar a mensagem!",
+				severity: "error",
+			});
+		}
+
+		setLoading(false);
 	}
 
 	return (
@@ -99,15 +152,26 @@ export function ContactForm() {
 				error={!!message.error}
 				helperText={message.error}
 			/>
-			<Button
+			<LoadingButton
 				fullWidth
 				type="submit"
 				variant="contained"
 				color="primary"
+				loading={loading}
 				sx={{ maxWidth: 200 }}
 			>
 				Enviar
-			</Button>
+			</LoadingButton>
+			<Snackbar
+				open={snackbar.open}
+				autoHideDuration={3000}
+				onClose={() => setSnackbar(snackbar => ({ ...snackbar, open: false }))}
+				TransitionComponent={Slide}
+			>
+				<Alert severity={snackbar.severity} variant="filled">
+					{snackbar.message}
+				</Alert>
+			</Snackbar>
 		</Stack>
 	);
 }
