@@ -74,6 +74,15 @@ async function verifyBody(body) {
 			status: 400,
 		};
 	}
+
+	if (message.length > 2000) {
+		throw {
+			message: "Message must be less or equal to 2000 characters",
+			success: false,
+			code: "invalid_request",
+			status: 400,
+		};
+	}
 }
 
 async function sendMessage(body) {

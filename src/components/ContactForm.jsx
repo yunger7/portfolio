@@ -53,6 +53,13 @@ export function ContactForm() {
 			return;
 		}
 
+		if (message.value.length > 2000) {
+			setMessage(message => ({
+				...message,
+				error: "Máximo de 2000 caracteres",
+			}));
+		}
+
 		setLoading(true);
 
 		try {
@@ -117,9 +124,7 @@ export function ContactForm() {
 				label="Nome"
 				variant="outlined"
 				value={name.value}
-				onChange={event =>
-					setName(name => ({ ...name, value: event.target.value }))
-				}
+				onChange={event => setName({ value: event.target.value, error: false })}
 				error={!!name.error}
 				helperText={name.error}
 			/>
@@ -132,7 +137,7 @@ export function ContactForm() {
 				variant="outlined"
 				value={email.value}
 				onChange={event =>
-					setEmail(email => ({ ...email, value: event.target.value }))
+					setEmail({ value: event.target.value, error: false })
 				}
 				error={!!email.error}
 				helperText={email.error}
@@ -147,10 +152,10 @@ export function ContactForm() {
 				rows={4}
 				value={message.value}
 				onChange={event =>
-					setMessage(message => ({ ...message, value: event.target.value }))
+					setMessage({ value: event.target.value, error: false })
 				}
 				error={!!message.error}
-				helperText={message.error}
+				helperText={message.error || `${message.value.length}/2000`}
 			/>
 			<LoadingButton
 				fullWidth
