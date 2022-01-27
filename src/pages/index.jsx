@@ -5,9 +5,6 @@ import {
 	Container,
 	Box,
 	Grid,
-	TextField,
-	Stack,
-	Button,
 	Link as MuiLink,
 	useTheme,
 } from "@mui/material";
@@ -26,7 +23,13 @@ import {
 	SiReact as ReactIcon,
 } from "react-icons/si";
 
-import { WaveDivider, Blob, SkillBubble, ProjectPreview } from "../components";
+import {
+	WaveDivider,
+	Blob,
+	SkillBubble,
+	ProjectPreview,
+	ContactForm,
+} from "../components";
 import { palette } from "../styles/theme";
 
 import BackgroundImage from "../../public/background.jpg";
@@ -319,54 +322,7 @@ export default function Home() {
 						</Box>
 						.
 					</Typography>
-					<Stack
-						noValidate
-						component="form"
-						autoComplete="off"
-						alignItems="center"
-						spacing={4}
-						onSubmit={() => console.log("SUBMIT")}
-						sx={{
-							maxWidth: theme => theme.breakpoints.values.md,
-							width: "100%",
-							mx: "auto",
-							flex: 1,
-						}}
-					>
-						<TextField
-							required
-							fullWidth
-							id="name"
-							label="Nome"
-							variant="outlined"
-						/>
-						<TextField
-							required
-							fullWidth
-							type="email"
-							id="email"
-							label="Email"
-							variant="outlined"
-						/>
-						<TextField
-							required
-							multiline
-							fullWidth
-							id="message"
-							label="Mensagem"
-							variant="outlined"
-							rows={4}
-						/>
-						<Button
-							fullWidth
-							type="submit"
-							variant="contained"
-							color="primary"
-							sx={{ maxWidth: 200 }}
-						>
-							Enviar
-						</Button>
-					</Stack>
+					<ContactForm />
 					<Box>
 						<Typography variant="body2" align="center">
 							&copy; Luís Galete - {new Date().getFullYear()}
