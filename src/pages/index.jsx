@@ -65,6 +65,7 @@ export default function Home() {
 				<Image
 					priority
 					src={BackgroundImage}
+					alt="Winter background"
 					layout="fill"
 					objectFit="cover"
 					quality={100}
@@ -178,9 +179,6 @@ export default function Home() {
 					height: "100vh",
 					maxHeight: "100%",
 					bgcolor: palette.nord6,
-					// display: "flex",
-					// alignItems: "center",
-					// justifyContent: "center",
 				}}
 			>
 				<WaveDivider
@@ -189,9 +187,21 @@ export default function Home() {
 					width={125}
 					color={theme.palette.background.default}
 				/>
-				<Container component="section" maxWidth="xl" sx={{ pb: 10 }}>
+				<Container
+					component="section"
+					maxWidth="xl"
+					sx={{
+						pb: 10,
+						width: 1,
+						height: 1,
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "stretch",
+						justifyContent: "center",
+					}}
+				>
 					<Typography variant="h2">Aqui estão alguns exemplos</Typography>
-					<Grid container>
+					<Grid container sx={{ my: 4 }}>
 						<Grid item xs={3}>
 							<ProjectPreview
 								name="yunger.dev"
