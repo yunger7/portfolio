@@ -23,19 +23,19 @@ export function ContactForm() {
 			return;
 		}
 
-		if (!message.value) {
-			setMessage(message => ({
-				...message,
-				error: "Esse campo é obrigatório",
-			}));
-			return;
-		}
-
 		const emailRegEx =
 			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 		if (!emailRegEx.test(email.value)) {
 			setEmail(email => ({ ...email, error: "Email inválido" }));
+			return;
+		}
+
+		if (!message.value) {
+			setMessage(message => ({
+				...message,
+				error: "Esse campo é obrigatório",
+			}));
 			return;
 		}
 
