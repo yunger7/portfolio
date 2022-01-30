@@ -23,6 +23,7 @@ import {
 	SiNextdotjs as NextIcon,
 	SiReact as ReactIcon,
 } from "react-icons/si";
+import Snowfall from "react-snowfall";
 
 import {
 	WaveDivider,
@@ -63,6 +64,7 @@ export default function Home() {
 					},
 				}}
 			>
+				<Snowfall color={palette.nord6} />
 				<Image
 					priority
 					src={BackgroundImage}
