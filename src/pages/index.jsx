@@ -205,12 +205,14 @@ export default function Home() {
 						<Grid item xs={3}>
 							<ProjectPreview
 								name="yunger.dev"
-								description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
-								ipsum? Voluptatem, id temporibus. Nulla totam, ipsa, quae fugit nam
-								iusto numquam ex praesentium, magni consectetur aspernatur nobis
-								labore alias corporis!"
+								description="yunger.dev é website criado para compartilhar conhecimento, ideias e experiencias. Além de um local para hospedar projetos e criar networking."
 								animationDelay={3}
-								images={["/yunger-dev-1.png"]}
+								images={[
+									"/projects/yunger-dev/home.jpg",
+									"/projects/yunger-dev/blog.jpg",
+									"/projects/yunger-dev/footer.jpg",
+									"/projects/yunger-dev/contact.jpg",
+								]}
 								sourceCode="https://github.com/yunger7/yunger.dev"
 								website="https://yunger.dev/"
 								logo={
@@ -227,12 +229,16 @@ export default function Home() {
 						<Grid item xs={3}>
 							<ProjectPreview
 								name="Progretion"
-								description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
-								ipsum? Voluptatem, id temporibus. Nulla totam, ipsa, quae fugit nam
-								iusto numquam ex praesentium, magni consectetur aspernatur nobis
-								labore alias corporis!"
+								description="Progretion é um Software as a Service desenvolvido para medir o progresso de atividades no Notion, gerando gráficos que podem ser adicionados diretamente ao workspace. O projeto foi descontinuado devido a complicações na API oficial da plataforma."
 								animationDelay={0.2}
-								// images={[]}
+								images={[
+									"/projects/progretion/chart-creator.jpg",
+									"/projects/progretion/embed.jpg",
+									"/projects/progretion/dashboard.jpg",
+									"/projects/progretion/history.jpg",
+									"/projects/progretion/settings.jpg",
+									"/projects/progretion/setup.jpg",
+								]}
 								website="https://progretion.com/"
 								logo={
 									<Image
@@ -248,17 +254,21 @@ export default function Home() {
 						<Grid item xs={3}>
 							<ProjectPreview
 								name="Axew"
-								description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
-								ipsum? Voluptatem, id temporibus. Nulla totam, ipsa, quae fugit nam
-								iusto numquam ex praesentium, magni consectetur aspernatur nobis
-								labore alias corporis!"
+								description="Axew é um template HTML desenvolvido para profissionais que buscam divulgar seu trabalho. É o local ideal para expor habilidades e projetos realizados anteriormente."
 								animationDelay={1.5}
-								// images={[]}
+								images={[
+									"/projects/axew/cover.jpg",
+									"/projects/axew/home.jpg",
+									"/projects/axew/about.jpg",
+									"/projects/axew/services.jpg",
+									"/projects/axew/projects.jpg",
+									"/projects/axew/contact.jpg",
+								]}
 								website="https://templates.yunger.dev/axew"
 								logo={
 									<Image
 										src="/projects/axew/logo.png"
-										alt="axew logo"
+										alt="Axew logo"
 										width={75}
 										height={75}
 									/>
@@ -267,20 +277,22 @@ export default function Home() {
 						</Grid>
 						<Grid item xs={3}>
 							<ProjectPreview
-								name="Podcastr"
-								description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
-								ipsum? Voluptatem, id temporibus. Nulla totam, ipsa, quae fugit nam
-								iusto numquam ex praesentium, magni consectetur aspernatur nobis
-								labore alias corporis!"
+								name="Ecoleta"
+								description="Ecoleta é um projeto realizado durante a Next Level Week, um evento realizado pela Rocketseat com fins educacionais. A aplicação tem como objetivo permitir empresas a cadastrarem seus pontos de coleta, facilitando usuários a encontrar um local de descarte adequado em sua cidade"
 								animationDelay={2.5}
-								// images={[]}
+								images={[
+									"/projects/ecoleta/home.jpg",
+									"/projects/ecoleta/pontos.jpg",
+									"/projects/ecoleta/search.jpg",
+									"/projects/ecoleta/cadastro.jpg",
+								]}
 								sourceCode="https://github.com/yunger7/podcastr"
 								logo={
 									<Image
-										src="/projects/podcastr/logo.svg"
-										alt="podcastr logo"
-										width={125}
-										height={125}
+										src="/projects/ecoleta/logo.png"
+										alt="Ecoleta logo"
+										width={142.25}
+										height={34.5}
 									/>
 								}
 							/>
