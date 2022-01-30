@@ -141,8 +141,8 @@ export default function Home() {
 								<Typography variant="body1" align="center">
 									Olá! Meu nome é Luís Galete. <br /> Guiado pela criatividade e
 									motivado por ideias, encontrei na programação uma paixão, a
-									ferramenta perfeita para dar vida a ideias, que ainda se
-									encontram aprisionadas em uma folha de papel.
+									ferramenta perfeita para dar vida a ideias, que até então
+									encontravam-se aprisionadas em uma folha de papel.
 								</Typography>
 							</Blob>
 						</Grid>
