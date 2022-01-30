@@ -208,11 +208,12 @@ export default function Home() {
 						flexDirection: "column",
 						alignItems: "stretch",
 						justifyContent: "center",
+						textAlign: { xs: "center", sm: "unset" },
 					}}
 				>
 					<Typography variant="h2">Aqui estão alguns exemplos</Typography>
 					<Grid container sx={{ my: 4 }}>
-						<Grid item xs={3}>
+						<Grid item xs={6} sm={3}>
 							<ProjectPreview
 								name="yunger.dev"
 								description="yunger.dev é website criado para compartilhar conhecimento, ideias e experiencias. Além de um local para hospedar projetos e criar networking."
@@ -236,7 +237,7 @@ export default function Home() {
 								}
 							/>
 						</Grid>
-						<Grid item xs={3}>
+						<Grid item xs={6} sm={3}>
 							<ProjectPreview
 								name="Progretion"
 								description="Progretion é um Software as a Service desenvolvido para medir o progresso de atividades no Notion, gerando gráficos que podem ser adicionados diretamente ao workspace. O projeto foi descontinuado devido a complicações na API oficial da plataforma."
@@ -261,7 +262,7 @@ export default function Home() {
 								}
 							/>
 						</Grid>
-						<Grid item xs={3}>
+						<Grid item xs={6} sm={3}>
 							<ProjectPreview
 								name="Axew"
 								description="Axew é um template HTML desenvolvido para profissionais que buscam divulgar seu trabalho. É o local ideal para expor habilidades e projetos realizados anteriormente."
@@ -285,7 +286,7 @@ export default function Home() {
 								}
 							/>
 						</Grid>
-						<Grid item xs={3}>
+						<Grid item xs={6} sm={3}>
 							<ProjectPreview
 								name="Ecoleta"
 								description="Ecoleta é um projeto realizado durante a Next Level Week, um evento realizado pela Rocketseat com fins educacionais. A aplicação tem como objetivo permitir empresas a cadastrarem seus pontos de coleta, facilitando usuários a encontrar um local de descarte adequado em sua cidade"
@@ -308,7 +309,10 @@ export default function Home() {
 							/>
 						</Grid>
 					</Grid>
-					<Typography variant="h6" align="right">
+					<Typography
+						variant="h6"
+						sx={{ textAlign: { xs: "center", sm: "right" } }}
+					>
 						Veja o restante no{" "}
 						<MuiLink
 							href="https://github.com/yunger7"
