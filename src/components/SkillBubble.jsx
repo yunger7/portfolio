@@ -9,6 +9,7 @@ export function SkillBubble({ icon, delay }) {
 			sx={{
 				width: 100,
 				height: 100,
+				margin: "auto",
 				borderRadius: "50%",
 				fontSize: "2.5rem",
 				bgcolor: palette.nord6,

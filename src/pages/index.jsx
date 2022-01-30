@@ -7,6 +7,7 @@ import {
 	Grid,
 	Link as MuiLink,
 	useTheme,
+	useMediaQuery,
 } from "@mui/material";
 import {
 	ChevronRight as ArrowRightIcon,
@@ -121,56 +122,58 @@ export default function Home() {
 				}}
 			>
 				<Container component="section" maxWidth="xl">
-					<Grid container>
+					<Grid container direction={{ xs: "column", md: "row" }}>
 						<Grid
 							item
 							container
-							direction="column"
+							direction={{ xs: "row", md: "column" }}
 							justifyContent="space-evenly"
 							alignItems="center"
-							xs={3}
+							xs={12}
+							md={2}
+							lg={3}
 						>
-							<Grid item xs={3} alignSelf="flex-end">
+							<Grid item sm={3} alignSelf="flex-end">
 								<SkillBubble icon={<JavascriptIcon />} delay={1000} />
 							</Grid>
-							<Grid item xs={3} alignSelf="center">
+							<Grid item sm={3} alignSelf="center">
 								<SkillBubble icon={<ReactIcon />} delay={500} />
 							</Grid>
-							<Grid item xs={3} alignSelf="center">
+							<Grid item sm={3} alignSelf="center">
 								<SkillBubble icon={<HtmlIcon />} delay={2000} />
 							</Grid>
-							<Grid item xs={3} alignSelf="flex-end">
+							<Grid item sm={3} alignSelf="flex-end">
 								<SkillBubble icon={<GithubIcon />} delay={75} />
 							</Grid>
 						</Grid>
-						<Grid item xs={6}>
-							<Blob>
-								<Typography variant="body1" align="center">
-									Olá! Meu nome é Luís Galete. <br /> Guiado pela criatividade e
-									motivado por ideias, encontrei na programação uma paixão, a
-									ferramenta perfeita para dar vida a ideias, que até então
-									encontravam-se aprisionadas em uma folha de papel.
-								</Typography>
-							</Blob>
+						<Grid item xs={12} md={8} lg={6}>
+							<AboutMe>
+								Olá! Meu nome é Luís Galete. <br /> Guiado pela criatividade e
+								motivado por ideias, encontrei na programação uma paixão, a
+								ferramenta perfeita para dar vida a ideias, que até então
+								encontravam-se aprisionadas em uma folha de papel.
+							</AboutMe>
 						</Grid>
 						<Grid
 							item
 							container
-							direction="column"
+							direction={{ xs: "row", md: "column" }}
 							justifyContent="space-evenly"
 							alignItems="center"
-							xs={3}
+							xs={12}
+							md={2}
+							lg={3}
 						>
-							<Grid item xs={3} alignSelf="flex-start">
+							<Grid item sm={3} alignSelf="flex-start">
 								<SkillBubble icon={<NodejsIcon />} delay={250} />
 							</Grid>
-							<Grid item xs={3} alignSelf="center">
+							<Grid item sm={3} alignSelf="center">
 								<SkillBubble icon={<CssIcon />} delay={2000} />
 							</Grid>
-							<Grid item xs={3} alignSelf="center">
+							<Grid item sm={3} alignSelf="center">
 								<SkillBubble icon={<NextIcon />} delay={750} />
 							</Grid>
-							<Grid item xs={3} alignSelf="flex-start">
+							<Grid item sm={3} alignSelf="flex-start">
 								<SkillBubble icon={<FirebaseIcon />} delay={25} />
 							</Grid>
 						</Grid>
@@ -376,5 +379,29 @@ export default function Home() {
 				</Container>
 			</Box>
 		</Box>
+	);
+}
+
+function AboutMe({ children }) {
+	const smallScreen = useMediaQuery("(max-width: 450px)");
+
+	if (smallScreen) {
+		return (
+			<Typography
+				variant="body1"
+				align="center"
+				sx={{ color: "text.primary", my: 6 }}
+			>
+				{children}
+			</Typography>
+		);
+	}
+
+	return (
+		<Blob>
+			<Typography variant="body1" align="center">
+				{children}
+			</Typography>
+		</Blob>
 	);
 }
