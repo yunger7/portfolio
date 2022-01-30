@@ -9,6 +9,7 @@ import {
 	DialogActions,
 	Typography,
 	Button,
+	useMediaQuery,
 } from "@mui/material";
 import { Code as CodeIcon, Link as WebsiteIcon } from "@mui/icons-material";
 
@@ -24,6 +25,8 @@ export function ProjectPreview({
 	website,
 	animationDelay,
 }) {
+	const smallScreen = useMediaQuery(theme => theme.breakpoints.only("xs"));
+
 	const [dialogOpen, setDialogOpen] = useState(false);
 
 	return (
@@ -43,7 +46,7 @@ export function ProjectPreview({
 				aria-describedby={`${projectName}-description`}
 				onClose={() => setDialogOpen(false)}
 			>
-				{images && (
+				{images && !smallScreen && (
 					<Box sx={{ p: 2 }}>
 						<Carousel>
 							{images.map((src, index) => (
@@ -68,7 +71,9 @@ export function ProjectPreview({
 						</Carousel>
 					</Box>
 				)}
-				<DialogContent sx={[images && { pt: 0 }]}>
+				<DialogContent
+					sx={[{ maxHeight: 300 }, images && !smallScreen && { pt: 0 }]}
+				>
 					<Typography gutterBottom variant="h3" id={projectName}>
 						{projectName}
 					</Typography>
