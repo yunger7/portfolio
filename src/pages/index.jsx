@@ -74,14 +74,21 @@ export default function Home() {
 				<Box
 					sx={{
 						position: "absolute",
-						left: "10%",
 						top: "35%",
+						left: 0,
+						width: 1,
+						height: 1,
+						pl: { xs: 0, md: "10%" },
+						textAlign: { xs: "center", md: "left" },
 						color: palette.nord6,
 					}}
 				>
 					<Typography
 						variant="h1"
-						sx={{ fontSize: "4rem !important", lineHeight: 1.1 }}
+						sx={{
+							fontSize: { xs: "3rem !important", sm: "4rem !important" },
+							lineHeight: 1.1,
+						}}
 					>
 						Luís Galete
 					</Typography>
