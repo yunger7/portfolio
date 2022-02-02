@@ -302,7 +302,7 @@ export default function Home() {
 									"/projects/ecoleta/search.jpg",
 									"/projects/ecoleta/cadastro.jpg",
 								]}
-								sourceCode="https://github.com/yunger7/podcastr"
+								sourceCode="https://github.com/yunger7/Ecoleta"
 								logo={
 									<Image
 										priority
