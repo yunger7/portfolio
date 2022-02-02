@@ -1,17 +1,5 @@
 .floating {
-	animation: fadeInFromTop 0.5s linear forwards, floating ease 8s infinite;
-}
-
-@keyframes fadeInFromTop {
-	from {
-		opacity: 0;
-		transform: translateY(-20px);
-	}
-
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+	animation: floating ease 8s infinite;
 }
 
 @keyframes floating {
