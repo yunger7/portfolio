@@ -230,6 +230,7 @@ export default function Home() {
 								website="https://yunger.dev/"
 								logo={
 									<Image
+										priority
 										unselectable="on"
 										src="/projects/yunger-dev/logo.png"
 										alt="yunger.dev logo"
@@ -255,6 +256,7 @@ export default function Home() {
 								website="https://progretion.com/"
 								logo={
 									<Image
+										priority
 										unselectable="on"
 										src="/projects/progretion/logo.png"
 										alt="progretion logo"
@@ -280,6 +282,7 @@ export default function Home() {
 								website="https://templates.yunger.dev/axew"
 								logo={
 									<Image
+										priority
 										src="/projects/axew/logo.png"
 										alt="Axew logo"
 										width={75}
@@ -302,6 +305,7 @@ export default function Home() {
 								sourceCode="https://github.com/yunger7/podcastr"
 								logo={
 									<Image
+										priority
 										src="/projects/ecoleta/logo.png"
 										alt="Ecoleta logo"
 										width={142.25}

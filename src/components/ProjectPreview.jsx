@@ -62,6 +62,7 @@ export function ProjectPreview({
 									}}
 								>
 									<Image
+										priority={index === 0}
 										src={src}
 										alt={`${projectName} showcase ${index}`}
 										layout="fill"
