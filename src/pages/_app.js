@@ -1,7 +1,24 @@
 import Head from "next/head";
-import { MantineProvider } from "@mantine/core";
+import { useState } from "react";
+import { getCookie, setCookies } from "cookies-next";
 
-export default function App({ Component, pageProps }) {
+import { MantineProvider, ColorSchemeProvider } from "@mantine/core";
+import { useHotkeys } from "@mantine/hooks";
+
+export default function App(props) {
+	const { Component, pageProps } = props;
+	const [colorScheme, setColorScheme] = useState(props.colorScheme);
+
+	const toggleColorScheme = value => {
+		const nextColorScheme =
+			value || (colorScheme === "dark" ? "light" : "dark");
+		setColorScheme(nextColorScheme);
+
+		setCookies("color-scheme", nextColorScheme, { maxAge: 60 * 60 * 24 * 30 });
+	};
+
+	useHotkeys([["mod+j", () => toggleColorScheme()]]);
+
 	return (
 		<>
 			<Head>
@@ -12,15 +29,24 @@ export default function App({ Component, pageProps }) {
 				/>
 			</Head>
 
-			<MantineProvider
-				withGlobalStyles
-				withNormalizeCSS
-				theme={{
-					colorScheme: "light",
-				}}
+			<ColorSchemeProvider
+				colorScheme={colorScheme}
+				toggleColorScheme={toggleColorScheme}
 			>
-				<Component {...pageProps} />
-			</MantineProvider>
+				<MantineProvider
+					withGlobalStyles
+					withNormalizeCSS
+					theme={{
+						colorScheme,
+					}}
+				>
+					<Component {...pageProps} />
+				</MantineProvider>
+			</ColorSchemeProvider>
 		</>
 	);
 }
+
+App.getInitialProps = ({ ctx }) => ({
+	colorScheme: getCookie("color-scheme", ctx) || "light",
+});

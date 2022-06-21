@@ -1,6 +1,16 @@
-import { Container, Paper, Title, Text, Button, Divider } from "@mantine/core";
+import {
+	Container,
+	Paper,
+	Title,
+	Text,
+	Button,
+	Divider,
+	useMantineColorScheme,
+} from "@mantine/core";
 
 export default function Home() {
+	const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+
 	return (
 		<Container size="xl" p="xl">
 			<Paper withBorder shadow="lg" p="lg">
@@ -13,8 +23,12 @@ export default function Home() {
 					nostrum aut harum omnis maxime magni quos saepe sunt animi porro nam!
 				</Text>
 				<Divider my="sm" />
-				<Button variant="gradient" gradient={{ from: "indigo", to: "blue" }}>
-					Click me!
+				<Button
+					variant="gradient"
+					gradient={{ from: "indigo", to: "blue" }}
+					onClick={() => toggleColorScheme()}
+				>
+					Toggle theme
 				</Button>
 			</Paper>
 		</Container>
