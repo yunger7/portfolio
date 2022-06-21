@@ -9,6 +9,13 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@mantine/core": "^4.2.10",
+		"@mantine/form": "^4.2.10",
+		"@mantine/hooks": "^4.2.10",
+		"@mantine/modals": "^4.2.10",
+		"@mantine/next": "^4.2.10",
+		"@mantine/notifications": "^4.2.10",
+		"@mantine/spotlight": "^4.2.10",
 		"next": "12.1.6",
 		"react": "18.2.0",
 		"react-dom": "18.2.0"
