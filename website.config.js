@@ -1,3 +1,11 @@
+import {
+	BrandJavascript as JavascriptIcon,
+	BrandReactNative as ReactIcon,
+	BrandNextjs as NextjsIcon,
+	BrandVercel as VercelIcon,
+	BrandVisualStudio as VscodeIcon,
+} from "tabler-icons-react";
+
 export const username = "Luís Galete";
 
 export const social = {
@@ -7,3 +15,11 @@ export const social = {
 	discord: "yunger#3461",
 	twitter: null,
 };
+
+export const technologies = [
+	{ name: "JavaScript", icon: <JavascriptIcon /> },
+	{ name: "React", icon: <ReactIcon /> },
+	{ name: "Next.js", icon: <NextjsIcon /> },
+	{ name: "Vercel", icon: <VercelIcon /> },
+	{ name: "VSCode", icon: <VscodeIcon /> },
+];
