@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import { getCookie, setCookies } from "cookies-next";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 import { MantineProvider, ColorSchemeProvider } from "@mantine/core";
 import { useHotkeys } from "@mantine/hooks";
@@ -42,7 +43,9 @@ export default function App(props) {
 					}}
 				>
 					<NotificationsProvider>
-						<Component {...pageProps} />
+						<ParallaxProvider>
+							<Component {...pageProps} />
+						</ParallaxProvider>
 					</NotificationsProvider>
 				</MantineProvider>
 			</ColorSchemeProvider>
