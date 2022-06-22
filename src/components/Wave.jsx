@@ -1,4 +1,4 @@
-import { Box, createStyles, useMantineColorScheme } from "@mantine/core";
+import { Center, createStyles, useMantineColorScheme } from "@mantine/core";
 import { ParallaxBanner } from "react-scroll-parallax";
 
 const useStyles = createStyles({
@@ -15,10 +15,6 @@ const useStyles = createStyles({
 		position: "absolute",
 		top: 0,
 		left: 0,
-
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "center",
 	},
 });
 
@@ -36,9 +32,9 @@ export function Wave({ children }) {
 				},
 				{
 					children: (
-						<Box className={cx(classes.content, classes.fullSize)}>
+						<Center className={cx(classes.content, classes.fullSize)}>
 							{children}
-						</Box>
+						</Center>
 					),
 					speed: -15,
 				},
