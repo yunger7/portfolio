@@ -101,7 +101,7 @@ export function Header() {
 						size="lg"
 						variant="gradient"
 						weight={700}
-						gradient={{ from: "cyan", to: "blue" }}
+						gradient={{ from: "blue", to: "cyan" }}
 					>
 						{username}
 					</Text>
