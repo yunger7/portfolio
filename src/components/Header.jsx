@@ -23,7 +23,7 @@ import { showNotification } from "@mantine/notifications";
 import { NextLink } from "@mantine/next";
 
 import Logo from "public/logo.png";
-import { websiteConfig } from "website.config";
+import { social, username } from "website.config";
 
 const useStyles = createStyles(theme => ({
 	header: {
@@ -81,8 +81,6 @@ export function Header() {
 			});
 		}
 	}, [clipboard]);
-
-	const { social, username } = websiteConfig;
 
 	return (
 		<MantineHeader className={classes.header} height={60}>
