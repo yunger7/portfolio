@@ -1,11 +1,4 @@
 import Image from "next/image";
-import {
-	BrandGithub as GithubIcon,
-	BrandReddit as RedditIcon,
-	BrandSteam as SteamIcon,
-	BrandDiscord as DiscordIcon,
-	BrandTwitter as TwitterIcon,
-} from "tabler-icons-react";
 
 import {
 	Header as MantineHeader,
@@ -21,6 +14,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { NextLink } from "@mantine/next";
 
 import { useDiscordTag } from "@hooks";
+import { SOCIAL } from "@utils";
 
 import Logo from "public/logo.png";
 import { social, username } from "website.config";
@@ -64,6 +58,76 @@ export function Header() {
 	const { copyDiscordTag } = useDiscordTag();
 	const { classes } = useStyles();
 
+	function renderSocialMedia(type = "ActionIcon") {
+		const items = [];
+
+		for (const [name, href] of Object.entries(social)) {
+			let item;
+			const Icon = SOCIAL[name].icon;
+
+			switch (type) {
+				case "ActionIcon":
+					if (name === "discord") {
+						item = (
+							<ActionIcon
+								size="lg"
+								variant="hover"
+								onClick={copyDiscordTag}
+								aria-label={SOCIAL[name].name}
+								key={name}
+							>
+								<Icon size={18} />
+							</ActionIcon>
+						);
+					} else {
+						item = (
+							<ActionIcon
+								component="a"
+								target="_blank"
+								size="lg"
+								variant="hover"
+								href={href}
+								aria-label={SOCIAL[name].name}
+								key={name}
+							>
+								<Icon size={18} />
+							</ActionIcon>
+						);
+					}
+					break;
+				case "MenuItem":
+					if (name === "discord") {
+						item = (
+							<Menu.Item
+								icon={<Icon size={18} />}
+								onClick={copyDiscordTag}
+								key={name}
+							>
+								{SOCIAL[name].name}
+							</Menu.Item>
+						);
+					} else {
+						item = (
+							<Menu.Item
+								component="a"
+								href={href}
+								target="_blank"
+								icon={<Icon size={18} />}
+								key={name}
+							>
+								{SOCIAL[name].name}
+							</Menu.Item>
+						);
+					}
+					break;
+			}
+
+			if (item) items.push(item);
+		}
+
+		return items;
+	}
+
 	return (
 		<MantineHeader className={classes.header} height={60}>
 			<Container size="xl" className={classes.container}>
@@ -88,65 +152,7 @@ export function Header() {
 				</Group>
 
 				<Group spacing={5} className={classes.links}>
-					{social.github && (
-						<ActionIcon
-							component="a"
-							target="_blank"
-							size="lg"
-							variant="hover"
-							href={social.github}
-							aria-label="GitHub"
-						>
-							<GithubIcon size={18} />
-						</ActionIcon>
-					)}
-					{social.reddit && (
-						<ActionIcon
-							component="a"
-							target="_blank"
-							size="lg"
-							variant="hover"
-							href={social.reddit}
-							aria-label="Reddit"
-						>
-							<RedditIcon size={18} />
-						</ActionIcon>
-					)}
-					{social.steam && (
-						<ActionIcon
-							component="a"
-							target="_blank"
-							size="lg"
-							variant="hover"
-							href={social.steam}
-							aria-label="Steam"
-						>
-							<SteamIcon size={18} />
-						</ActionIcon>
-					)}
-					{social.discord && (
-						<ActionIcon
-							size="lg"
-							variant="hover"
-							disabled={!Boolean(social.discord)}
-							onClick={copyDiscordTag}
-							aria-label="Discord"
-						>
-							<DiscordIcon size={18} />
-						</ActionIcon>
-					)}
-					{social.twitter && (
-						<ActionIcon
-							component="a"
-							target="_blank"
-							size="lg"
-							variant="hover"
-							href={social.twitter}
-							aria-label="Twitter"
-						>
-							<TwitterIcon size={18} />
-						</ActionIcon>
-					)}
+					{renderSocialMedia("ActionIcon")}
 				</Group>
 
 				<Menu
@@ -167,54 +173,7 @@ export function Header() {
 						/>
 					}
 				>
-					{social.github && (
-						<Menu.Item
-							component="a"
-							href={social.github}
-							target="_blank"
-							icon={<GithubIcon size={18} />}
-						>
-							GitHub
-						</Menu.Item>
-					)}
-					{social.reddit && (
-						<Menu.Item
-							component="a"
-							href={social.reddit}
-							target="_blank"
-							icon={<RedditIcon size={18} />}
-						>
-							Reddit
-						</Menu.Item>
-					)}
-					{social.steam && (
-						<Menu.Item
-							component="a"
-							href={social.steam}
-							target="_blank"
-							icon={<SteamIcon size={18} />}
-						>
-							Steam
-						</Menu.Item>
-					)}
-					{social.discord && (
-						<Menu.Item
-							icon={<DiscordIcon size={18} />}
-							onClick={copyDiscordTag}
-						>
-							Discord
-						</Menu.Item>
-					)}
-					{social.twitter && (
-						<Menu.Item
-							component="a"
-							href={social.twitter}
-							target="_blank"
-							icon={<TwitterIcon size={18} />}
-						>
-							Twitter
-						</Menu.Item>
-					)}
+					{renderSocialMedia("MenuItem")}
 				</Menu>
 			</Container>
 		</MantineHeader>
