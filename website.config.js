@@ -8,6 +8,17 @@ import {
 
 export const username = "Luís Galete";
 
+export const location = "Nova Esperança - PR";
+
+export const firstCommitDate = new Date(2020, 2, 3); // Mar 3, 2020
+export const programmerAge =
+	new Date().getFullYear() - firstCommitDate.getFullYear();
+
+export const bio = `Sou um desenvolvedor Web localizado em ${location},
+com ${programmerAge} ${programmerAge <= 1 ? "ano" : "anos"} de experiência. 
+Guiado pela criatividade e movido a cafeína, encontrei na programação uma 
+paixão ― A ferramenta perfeita para tirar minhas ideias do papel.`;
+
 export const social = {
 	github: "https://github.com/yunger7",
 	reddit: "https://www.reddit.com/user/yunger_",
