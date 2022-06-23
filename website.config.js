@@ -24,7 +24,6 @@ export const social = {
 	reddit: "https://www.reddit.com/user/yunger_",
 	steam: "https://steamcommunity.com/id/yunger/",
 	discord: "yunger#3461",
-	twitter: null,
 };
 
 export const technologies = [
