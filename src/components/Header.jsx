@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useEffect } from "react";
 import {
 	BrandGithub as GithubIcon,
 	BrandReddit as RedditIcon,
@@ -18,9 +17,10 @@ import {
 	ActionIcon,
 	createStyles,
 } from "@mantine/core";
-import { useDisclosure, useClipboard } from "@mantine/hooks";
-import { showNotification } from "@mantine/notifications";
+import { useDisclosure } from "@mantine/hooks";
 import { NextLink } from "@mantine/next";
+
+import { useDiscordTag } from "@hooks";
 
 import Logo from "public/logo.png";
 import { social, username } from "website.config";
@@ -61,26 +61,8 @@ const useStyles = createStyles(theme => ({
 
 export function Header() {
 	const [opened, handlers] = useDisclosure(false);
+	const { copyDiscordTag } = useDiscordTag();
 	const { classes } = useStyles();
-	const clipboard = useClipboard();
-
-	useEffect(() => {
-		if (clipboard.copied) {
-			showNotification({
-				message: "Discord tag copied to clipboard!",
-				autoClose: 4000,
-				color: "green",
-			});
-		}
-
-		if (clipboard.error) {
-			showNotification({
-				message: "Wops, failed to copy Discord tag :(",
-				autoClose: 4000,
-				color: "red",
-			});
-		}
-	}, [clipboard]);
 
 	return (
 		<MantineHeader className={classes.header} height={60}>
@@ -147,7 +129,7 @@ export function Header() {
 							size="lg"
 							variant="hover"
 							disabled={!Boolean(social.discord)}
-							onClick={() => clipboard.copy(social.discord)}
+							onClick={copyDiscordTag}
 							aria-label="Discord"
 						>
 							<DiscordIcon size={18} />
@@ -218,7 +200,7 @@ export function Header() {
 					{social.discord && (
 						<Menu.Item
 							icon={<DiscordIcon size={18} />}
-							onClick={() => clipboard.copy(social.discord)}
+							onClick={copyDiscordTag}
 						>
 							Discord
 						</Menu.Item>
