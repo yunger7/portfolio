@@ -1,36 +1,26 @@
-import {
-	Container,
-	Paper,
-	Title,
-	Text,
-	Button,
-	Divider,
-	useMantineColorScheme,
-} from "@mantine/core";
+import { Container, Text, useMantineColorScheme } from "@mantine/core";
 
-export default function Home() {
+import { Header } from "@components";
+import { Home } from "@components/sections";
+
+export default function LandingPage() {
 	const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 
 	return (
-		<Container size="xl" p="xl">
-			<Paper withBorder shadow="lg" p="lg">
-				<Title order={1} sx={theme => ({ marginBottom: theme.spacing.sm })}>
-					Hello World!
-				</Title>
+		<>
+			<Header />
+			<Home />
+			<Container size="xl" p="xl" sx={{ minHeight: "80vh" }}>
 				<Text>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut possimus
-					libero, aliquam soluta labore adipisci totam explicabo voluptatibus
-					nostrum aut harum omnis maxime magni quos saepe sunt animi porro nam!
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nostrum
+					consequatur, laudantium inventore deleniti sunt saepe eaque distinctio
+					ad harum architecto eius consequuntur rem dicta aut, repudiandae illo.
+					Excepturi, eius. Lorem ipsum dolor sit amet consectetur adipisicing
+					elit. Suscipit, ratione cum aperiam maxime laboriosam soluta eveniet
+					cumque unde nostrum quam quia fuga eos assumenda quisquam sit
+					similique, mollitia temporibus dignissimos?
 				</Text>
-				<Divider my="sm" />
-				<Button
-					variant="gradient"
-					gradient={{ from: "indigo", to: "blue" }}
-					onClick={() => toggleColorScheme()}
-				>
-					Toggle theme
-				</Button>
-			</Paper>
-		</Container>
+			</Container>
+		</>
 	);
 }
