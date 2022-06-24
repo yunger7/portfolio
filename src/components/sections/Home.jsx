@@ -18,7 +18,14 @@ export function Home({ bio }) {
 	const os = useOs();
 
 	return (
-		<Box sx={{ position: "relative", width: "100%", height: "90vh" }}>
+		<Box
+			sx={{
+				position: "relative",
+				width: "100%",
+				height: "100%",
+				minHeight: "90vh",
+			}}
+		>
 			<WaveBackground>
 				<GlassCard>
 					<Image src="/logo.png" alt="" width={64} height={64} />
