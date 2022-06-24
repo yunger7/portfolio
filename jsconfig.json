@@ -7,7 +7,9 @@
 			"@hooks": ["src/hooks"],
 			"@hooks/*": ["src/hooks/*"],
 			"@utils": ["src/utils"],
-			"@utils/*": ["src/utils/*"]
+			"@utils/*": ["src/utils/*"],
+			"@style": ["src/styles"],
+			"@styles/*": ["src/styles/*"]
 		}
 	}
 }
