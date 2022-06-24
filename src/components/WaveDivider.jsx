@@ -3,7 +3,7 @@ import { Box, createStyles } from "@mantine/core";
 const useStyles = createStyles(theme => ({
 	root: {
 		position: "absolute",
-		bottom: 0,
+		bottom: -5,
 		left: 0,
 		width: "100%",
 		overflow: "hidden",
