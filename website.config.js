@@ -19,6 +19,9 @@ com ${programmerAge} ${programmerAge <= 1 ? "ano" : "anos"} de experiência.
 Guiado pela criatividade e movido a cafeína, encontrei na programação uma 
 paixão ― A ferramenta perfeita para tirar minhas ideias do papel.`;
 
+export const about =
+	'Desde o primeiro "Hello world", eu contribui com mais de 2.8 mil commits, espalhados entre 18 repositórios diferentes. Meu foco, no entanto, não é apenas "programar por programar" ― Vejo a programação como uma ferramenta, capaz de solucionar problemas e dar vida a ideias.'; // temp
+
 export const social = {
 	github: "https://github.com/yunger7",
 	reddit: "https://www.reddit.com/user/yunger_",
