@@ -7,20 +7,15 @@ import {
 } from "tabler-icons-react";
 
 export const username = "Luís Galete";
-
+export const githubUsername = "yunger7";
 export const location = "Nova Esperança - PR";
 
 export const firstCommitDate = new Date(2020, 2, 3); // Mar 3, 2020
-export const programmerAge =
-	new Date().getFullYear() - firstCommitDate.getFullYear();
 
-export const bio = `Sou um desenvolvedor Web localizado em ${location},
-com ${programmerAge} ${programmerAge <= 1 ? "ano" : "anos"} de experiência. 
-Guiado pela criatividade e movido a cafeína, encontrei na programação uma 
-paixão ― A ferramenta perfeita para tirar minhas ideias do papel.`;
+export const bio = `Sou um desenvolvedor Web localizado em {{ LOCATION }}, com {{ PROGRAMMING_AGE }} de experiência. Guiado pela criatividade e movido a cafeína, encontrei na programação uma paixão ― A ferramenta perfeita para tirar minhas ideias do papel.`;
 
 export const about =
-	'Desde o primeiro "Hello world", eu contribui com mais de 2.8 mil commits, espalhados entre 18 repositórios diferentes. Meu foco, no entanto, não é apenas "programar por programar" ― Vejo a programação como uma ferramenta, capaz de solucionar problemas e dar vida a ideias.'; // temp
+	'Desde o primeiro "Hello world", eu contribui com mais de {{ COMMITS }} commits, espalhados entre {{ REPOS }} repositórios diferentes. Meu foco, no entanto, não é apenas "programar por programar" ― Vejo a programação como uma ferramenta, capaz de solucionar problemas e dar vida a ideias.';
 
 export const social = {
 	github: "https://github.com/yunger7",
