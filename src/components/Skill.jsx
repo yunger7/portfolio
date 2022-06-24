@@ -34,6 +34,7 @@ export function Skill(props) {
 		icon: Icon,
 		animationDelay = 0,
 		animationVariant = 1,
+		sx,
 	} = props;
 
 	const { classes } = useStyles();
@@ -42,18 +43,23 @@ export function Skill(props) {
 	return (
 		<Center
 			className={classes[size]}
-			sx={{
-				position: "relative",
-				background:
-					theme.colorScheme === "light" ? theme.white : theme.colors.dark["6"],
-				boxShadow: `8px 8px 28px ${
-					theme.colorScheme === "light" ? "#bfbfbf" : "#141417"
-				}, -8px -8px 28px ${
-					theme.colorScheme === "light" ? "#ffffff" : "#212226"
-				}`,
-				animation: `${floatingAnimation[animationVariant]} ease 15s infinite`,
-				animationDelay: `${animationDelay}ms`,
-			}}
+			sx={[
+				sx,
+				{
+					position: "relative",
+					background:
+						theme.colorScheme === "light"
+							? theme.white
+							: theme.colors.dark["6"],
+					boxShadow: `8px 8px 28px ${
+						theme.colorScheme === "light" ? "#bfbfbf" : "#141417"
+					}, -8px -8px 28px ${
+						theme.colorScheme === "light" ? "#ffffff" : "#212226"
+					}`,
+					animation: `${floatingAnimation[animationVariant]} ease 15s infinite`,
+					animationDelay: `${animationDelay}ms`,
+				},
+			]}
 		>
 			<Icon
 				size={iconSize[size]}
