@@ -2,6 +2,13 @@ import { Center, createStyles, useMantineColorScheme } from "@mantine/core";
 import { ParallaxBanner } from "react-scroll-parallax";
 
 const useStyles = createStyles({
+	parallax: {
+		minHeight: "90vh",
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
+	},
+
 	fullSize: {
 		width: "100%",
 		height: "100%",
@@ -20,7 +27,7 @@ export function WaveBackground({ children }) {
 
 	return (
 		<ParallaxBanner
-			className={classes.fullSize}
+			className={cx(classes.parallax, classes.fullSize)}
 			layers={[
 				{
 					image: colorScheme === "light" ? "/wave-light.svg" : "/wave-dark.svg",
