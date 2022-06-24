@@ -23,6 +23,10 @@ const useStyles = createStyles(theme => ({
 	simple: {
 		width: "calc(100% + 1.3px)",
 		height: 90,
+
+		[theme.fn.smallerThan("xs")]: {
+			width: "calc(200% + 1.3px)",
+		},
 	},
 
 	layered: {},
