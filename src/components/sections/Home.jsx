@@ -12,9 +12,9 @@ import { useOs } from "@mantine/hooks";
 
 import { Wave, GlassCard } from "@components";
 
-import { username, technologies, bio } from "website.config";
+import { username, technologies } from "website.config";
 
-export function Home() {
+export function Home({ bio }) {
 	const os = useOs();
 
 	return (
