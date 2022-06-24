@@ -9,7 +9,9 @@
 			"@utils": ["src/utils"],
 			"@utils/*": ["src/utils/*"],
 			"@styles": ["src/styles"],
-			"@styles/*": ["src/styles/*"]
+			"@styles/*": ["src/styles/*"],
+			"@lib": ["src/lib"],
+			"@lib/*": ["src/lib/*"]
 		}
 	}
 }
