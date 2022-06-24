@@ -10,7 +10,7 @@ import {
 } from "@mantine/core";
 import { useOs } from "@mantine/hooks";
 
-import { Wave, GlassCard } from "@components";
+import { WaveBackground, GlassCard } from "@components";
 
 import { username, technologies } from "website.config";
 
@@ -18,7 +18,7 @@ export function Home({ bio }) {
 	const os = useOs();
 
 	return (
-		<Wave>
+		<WaveBackground>
 			<GlassCard>
 				<Image src="/logo.png" alt="" width={64} height={64} />
 				<Title mb="sm" order={1}>
@@ -67,6 +67,6 @@ export function Home({ bio }) {
 					</Box>
 				</MediaQuery>
 			</GlassCard>
-		</Wave>
+		</WaveBackground>
 	);
 }

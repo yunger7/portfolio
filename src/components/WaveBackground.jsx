@@ -18,7 +18,7 @@ const useStyles = createStyles({
 	},
 });
 
-export function Wave({ children }) {
+export function WaveBackground({ children }) {
 	const { colorScheme } = useMantineColorScheme();
 	const { classes, cx } = useStyles();
 
