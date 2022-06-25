@@ -83,6 +83,21 @@ const useStyles = createStyles(theme => ({
 
 	firebase: {
 		display: "flex",
+		justifyContent: "flex-start",
+		alignItems: "center",
+
+		[theme.fn.smallerThan("md")]: {
+			justifyContent: "center",
+		},
+
+		[theme.fn.smallerThan("xs")]: {
+			alignItems: "flex-end",
+			justifyContent: "flex-start",
+		},
+	},
+
+	vercel: {
+		display: "flex",
 		justifyContent: "flex-end",
 		alignItems: "center",
 
@@ -94,21 +109,6 @@ const useStyles = createStyles(theme => ({
 		[theme.fn.smallerThan("xs")]: {
 			alignItems: "flex-end",
 			justifyContent: "flex-end",
-		},
-	},
-
-	vercel: {
-		display: "flex",
-		justifyContent: "flex-start",
-		alignItems: "center",
-
-		[theme.fn.smallerThan("md")]: {
-			justifyContent: "center",
-		},
-
-		[theme.fn.smallerThan("xs")]: {
-			alignItems: "flex-end",
-			justifyContent: "flex-start",
 		},
 	},
 
@@ -216,13 +216,13 @@ export function About({ content }) {
 							</Card>
 						</Center>
 					</Grid.Col>
-					<Grid.Col className={classes.firebase} sm={2}>
-						<Skill size="small" icon={FirebaseIcon} animationDelay={1500} />
+					<Grid.Col className={classes.vercel} sm={2}>
+						<Skill size="small" icon={VercelIcon} animationDelay={1500} />
 					</Grid.Col>
-					<Grid.Col className={classes.vercel} sm={3} md={4}>
+					<Grid.Col className={classes.firebase} sm={3} md={4}>
 						<Skill
 							size="medium"
-							icon={VercelIcon}
+							icon={FirebaseIcon}
 							animationVariant="2"
 							sx={{
 								[theme.fn.smallerThan("sm")]: { marginLeft: "40%" },
