@@ -9,7 +9,11 @@ const shadowValues = {
 	xl: 0.5,
 };
 
-export function GlassCard({ children, shadow = "md" }) {
+export function GlassCard({
+	children,
+	shadow = "md",
+	backgroundOpacity = 0.15,
+}) {
 	const theme = useMantineTheme();
 
 	return (
@@ -32,7 +36,7 @@ export function GlassCard({ children, shadow = "md" }) {
 						theme.colorScheme === "light"
 							? theme.colors.gray["2"]
 							: theme.colors.dark["9"],
-						0.15
+						backgroundOpacity
 					),
 					boxShadow: `0 8px 32px 0 ${theme.fn.rgba(
 						theme.colors.dark["6"],
