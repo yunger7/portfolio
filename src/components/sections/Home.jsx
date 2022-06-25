@@ -27,7 +27,7 @@ export function Home({ bio }) {
 			}}
 		>
 			<WaveBackground>
-				<GlassCard>
+				<GlassCard shadow="xl">
 					<Image src="/logo.png" alt="" width={64} height={64} />
 					<Title mb="sm" order={1}>
 						Olá, eu sou{" "}
