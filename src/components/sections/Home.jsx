@@ -10,7 +10,7 @@ import {
 } from "@mantine/core";
 import { useOs } from "@mantine/hooks";
 
-import { WaveBackground, GlassCard, WaveDivider } from "@components";
+import { WaveBackground, GlassCard, WaveDivider } from "@/components";
 
 import { username, technologies } from "website.config";
 

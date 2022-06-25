@@ -1,6 +1,6 @@
 import { Center, createStyles, useMantineTheme } from "@mantine/core";
 
-import { floatingAnimation } from "@styles";
+import { floatingAnimation } from "@/styles";
 
 const useStyles = createStyles({
 	small: {

@@ -13,8 +13,8 @@ import {
 import { useDisclosure } from "@mantine/hooks";
 import { NextLink } from "@mantine/next";
 
-import { useDiscordTag } from "@hooks";
-import { SOCIAL } from "@utils";
+import { useDiscordTag } from "@/hooks";
+import { SOCIAL } from "@/utils";
 
 import Logo from "public/logo.png";
 import { social, username } from "website.config";

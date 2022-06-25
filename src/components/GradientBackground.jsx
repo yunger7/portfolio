@@ -1,7 +1,7 @@
 import { ParallaxBanner } from "react-scroll-parallax";
 import { Box, createStyles } from "@mantine/core";
 
-import { gradientBackgroundAnimation } from "@styles";
+import { gradientBackgroundAnimation } from "@/styles";
 
 const backgroundColors = ["#5E81AC", "#81A1C1", "#88C0D0", "#8FBCBB"];
 

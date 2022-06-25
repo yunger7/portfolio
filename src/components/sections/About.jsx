@@ -21,7 +21,7 @@ import {
 	BrandVisualStudio as VscodeIcon,
 } from "tabler-icons-react";
 
-import { Skill } from "@components";
+import { Skill } from "@/components";
 
 const useStyles = createStyles(theme => ({
 	react: {
