@@ -3,7 +3,6 @@ import { Box, createStyles } from "@mantine/core";
 const useStyles = createStyles(theme => ({
 	root: {
 		position: "absolute",
-		bottom: -5,
 		left: 0,
 		width: "100%",
 		overflow: "hidden",
@@ -32,13 +31,24 @@ const useStyles = createStyles(theme => ({
 	layered: {},
 }));
 
-export function WaveDivider({ variant = "simple" }) {
+export function WaveDivider({
+	variant = "simple",
+	position = "bottom",
+	invert = false,
+}) {
 	const { classes } = useStyles();
 
 	switch (variant) {
 		case "simple":
 			return (
-				<Box className={classes.root}>
+				<Box
+					className={classes.root}
+					sx={[
+						position === "bottom" && { bottom: -5 },
+						position === "top" && { top: -5 },
+						invert && { transform: "rotate(180deg)" },
+					]}
+				>
 					<svg
 						className={classes.simple}
 						xmlns="http://www.w3.org/2000/svg"
