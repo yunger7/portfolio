@@ -5,20 +5,25 @@ import { gradientBackgroundAnimation } from "@/styles";
 
 const backgroundColors = ["#5E81AC", "#81A1C1", "#88C0D0", "#8FBCBB"];
 
-const useStyles = createStyles({
+const useStyles = createStyles(theme => ({
 	parallax: {
-		width: "100%",
-		height: "100%",
 		minHeight: "90vh",
 	},
-});
+
+	fullSize: {
+		width: "100%",
+		height: "100%",
+	},
+
+	content: theme.fn.cover(),
+}));
 
 export function GradientBackground({ children }) {
-	const { classes } = useStyles();
+	const { classes, cx } = useStyles();
 
 	return (
 		<ParallaxBanner
-			className={classes.parallax}
+			className={cx(classes.parallax, classes.fullSize)}
 			layers={[
 				{
 					children: (
@@ -38,7 +43,11 @@ export function GradientBackground({ children }) {
 					speed: -50,
 				},
 				{
-					children,
+					children: (
+						<Box className={cx(classes.content, classes.fullSize)}>
+							{children}
+						</Box>
+					),
 					speed: -15,
 				},
 			]}
