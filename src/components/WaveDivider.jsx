@@ -7,6 +7,7 @@ const useStyles = createStyles(theme => ({
 		width: "100%",
 		overflow: "hidden",
 		lineHeight: 0,
+		zIndex: 1,
 
 		"& svg": {
 			position: "relative",
