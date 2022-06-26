@@ -16,17 +16,9 @@ export function useDiscordTag() {
 	useEffect(() => {
 		if (clipboard.copied) {
 			showNotification({
-				message: "Discord tag copied to clipboard!",
+				message: "Tag do Discord copiada para a area de transferência",
 				autoClose: 4000,
 				color: "green",
-			});
-		}
-
-		if (clipboard.error) {
-			showNotification({
-				message: "Wops, failed to copy Discord tag :(",
-				autoClose: 4000,
-				color: "red",
 			});
 		}
 	}, [clipboard]);
