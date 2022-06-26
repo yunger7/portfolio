@@ -54,7 +54,7 @@ export const technologies = [
 export const projects = [
 	{
 		title: "yunger.dev",
-		description: `Esta é minha oficina. Um local onde mantenho meus projetos, ferramentas, compartilho ideias, faço networking e escrevo sobre assuntos de meu interesse.`,
+		description: `Esta é minha oficina, o local onde mantenho meus projetos, ferramentas, compartilho ideias, faço networking e escrevo sobre assuntos de meu interesse.`,
 		status: "active",
 		tags: ["Projeto pessoal"],
 		source: "https://github.com/yunger7/yunger.dev",
@@ -84,7 +84,7 @@ export const projects = [
 		status: "active",
 		tags: ["Projeto pessoal"],
 		source: "https://github.com/yunger7/portfolio",
-		href: "https://luisgalete.com.br/",
+		href: null,
 		license: "Apache License 2.0",
 		logo: {
 			type: "image",
@@ -103,7 +103,7 @@ export const projects = [
 	},
 	{
 		title: "Blueprints",
-		description: `Este repositório contém vários projetos ilustrativos, usados para auxiliar na explicação de algum post no site yunger.dev`,
+		description: `Este repositório contém vários projetos ilustrativos, usados para auxiliar na explicação de algum post publicado na minha oficina.`,
 		status: "active",
 		tags: ["Projeto pessoal", "Monorepo"],
 		source: "https://github.com/yunger7/blueprints",
@@ -129,7 +129,6 @@ export const projects = [
 			image: "/projects/axew/logo.png",
 		},
 		images: [
-			"/projects/axew/cover.jpg",
 			"/projects/axew/home.jpg",
 			"/projects/axew/about.jpg",
 			"/projects/axew/services.jpg",
@@ -144,7 +143,7 @@ export const projects = [
 	},
 	{
 		title: "Laboratory",
-		description: `O repositório onde eu mantenho projetos pequenos, testes, arquivos de cursos e experimentos. É onde eu coloco a mão na massa para praticar assuntos que eu ainda não domino.`,
+		description: `Este repositório contém testes, projetos pequenos, arquivos de cursos e experimentos. É onde eu coloco a mão na massa para praticar assuntos que eu ainda não domino.`,
 		status: "active",
 		tags: ["Projeto pessoal", "Monorepo"],
 		source: "https://github.com/yunger7/laboratory",
@@ -197,14 +196,14 @@ export const projects = [
 		},
 		images: ["/projects/podcastr/home.jpg", "/projects/podcastr/details.jpg"],
 		technologies: [
-			{ name: "JavaScript", icon: <JavascriptIcon /> },
+			{ name: "TypeScript", icon: <CodeIcon /> },
 			{ name: "React", icon: <ReactIcon /> },
 			{ name: "Next.js", icon: <NextjsIcon /> },
 		],
 	},
 	{
 		title: "Letmeask",
-		description: `Projeto realizado durante a Next Level Week #6. A aplicação tem o objetivo de ajudar streamers a selecionarem perguntas de ouvintes para responder durante a live.`,
+		description: `Projeto realizado durante a Next Level Week #6. A aplicação tem o objetivo de ajudar streamers a selecionarem perguntas de ouvintes para responder durante uma livestream.`,
 		status: "archived",
 		tags: ["Rocketseat", "Next Level Week"],
 		source: "https://github.com/yunger7/letmeask",
@@ -216,8 +215,8 @@ export const projects = [
 		},
 		images: ["/projects/letmeask/home.jpg", "/projects/letmeask/room.jpg"],
 		technologies: [
-			{ name: "React", icon: <ReactIcon /> },
 			{ name: "TypeScript", icon: <CodeIcon /> },
+			{ name: "React", icon: <ReactIcon /> },
 			{ name: "Firebase", icon: <FirebaseIcon /> },
 		],
 	},
@@ -247,7 +246,7 @@ export const projects = [
 	},
 	{
 		title: "SENAI",
-		description: `Este repositório contém projetos, avaliações e exercícios realizados no curso de Desenvolvimento de Sistemas - SENAI CTM.`,
+		description: `Este repositório contém projetos, avaliações e exercícios realizados no curso de Desenvolvimento de Sistemas do SENAI CTM.`,
 		status: "archived",
 		tags: ["SENAI", "Monorepo"],
 		source: "https://github.com/yunger7/SENAI",
