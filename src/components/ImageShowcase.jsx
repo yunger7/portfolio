@@ -14,6 +14,11 @@ export function ImageShowcase({ images }) {
 			infiniteLoop
 			showStatus={false}
 			showThumbs={false}
+			labels={{
+				leftArrow: "Slide anterior",
+				rightArrow: "Próximo slide",
+				item: "Slide",
+			}}
 			renderArrowNext={(clickHandler, hasNext, label) => (
 				<ArrowButton
 					clickHandler={clickHandler}

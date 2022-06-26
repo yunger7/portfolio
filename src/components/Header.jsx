@@ -160,7 +160,7 @@ export function Header() {
 					closeOnItemClick
 					closeOnScroll
 					className={classes.menu}
-					menuButtonLabel="social links"
+					menuButtonLabel="Links media sociais"
 					opened={opened}
 					onOpen={handlers.open}
 					onClose={handlers.close}
@@ -169,7 +169,7 @@ export function Header() {
 							opened={opened}
 							onClick={() => handlers.toggle()}
 							size="sm"
-							aria-label={opened ? "Close navigation" : "Open navigation"}
+							aria-label={opened ? "Fechar navegação" : "Abrir navegação"}
 						/>
 					}
 				>
