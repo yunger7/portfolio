@@ -6,6 +6,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import { MantineProvider, ColorSchemeProvider } from "@mantine/core";
 import { useHotkeys } from "@mantine/hooks";
 import { NotificationsProvider } from "@mantine/notifications";
+import { ModalsProvider } from "@mantine/modals";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -44,11 +45,13 @@ export default function App(props) {
 						colorScheme,
 					}}
 				>
-					<NotificationsProvider>
-						<ParallaxProvider>
-							<Component {...pageProps} />
-						</ParallaxProvider>
-					</NotificationsProvider>
+					<ModalsProvider>
+						<NotificationsProvider>
+							<ParallaxProvider>
+								<Component {...pageProps} />
+							</ParallaxProvider>
+						</NotificationsProvider>
+					</ModalsProvider>
 				</MantineProvider>
 			</ColorSchemeProvider>
 		</>
