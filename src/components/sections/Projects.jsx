@@ -20,7 +20,7 @@ export function Projects() {
 					size="xl"
 					sx={{
 						paddingTop: "calc(5vh + 90px)",
-						paddingBottom: "10vh",
+						paddingBottom: "25vh",
 					}}
 				>
 					<Title
@@ -65,6 +65,7 @@ export function Projects() {
 					</SimpleGrid>
 				</Container>
 			</GradientBackground>
+			<WaveDivider variant="simple" />
 		</Box>
 	);
 }
