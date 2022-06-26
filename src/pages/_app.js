@@ -46,7 +46,7 @@ export default function App(props) {
 					}}
 				>
 					<ModalsProvider>
-						<NotificationsProvider>
+						<NotificationsProvider autoClose={5000}>
 							<ParallaxProvider>
 								<Component {...pageProps} />
 							</ParallaxProvider>
