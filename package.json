@@ -24,7 +24,8 @@
 		"react-parallax-tilt": "^1.7.42",
 		"react-responsive-carousel": "^3.2.23",
 		"react-scroll-parallax": "^3.2.0",
-		"tabler-icons-react": "^1.50.0"
+		"tabler-icons-react": "^1.50.0",
+		"zod": "^3.17.3"
 	},
 	"devDependencies": {
 		"eslint": "8.18.0",
