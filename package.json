@@ -22,6 +22,7 @@
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"react-parallax-tilt": "^1.7.42",
+		"react-responsive-carousel": "^3.2.23",
 		"react-scroll-parallax": "^3.2.0",
 		"tabler-icons-react": "^1.50.0"
 	},
