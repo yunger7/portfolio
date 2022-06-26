@@ -10,7 +10,12 @@ import {
 } from "@mantine/core";
 import { useOs } from "@mantine/hooks";
 
-import { WaveBackground, GlassCard, WaveDivider } from "@/components";
+import {
+	WaveBackground,
+	GlassCard,
+	WaveDivider,
+	IconBadge,
+} from "@/components";
 
 import { username, technologies } from "website.config";
 
@@ -41,25 +46,17 @@ export function Home({ bio }) {
 						</Text>
 						.
 					</Title>
-					{technologies.map(({ name, icon }, i) => {
-						const Icon = (
-							<ActionIcon
-								variant="transparent"
-								color="blue"
-								size="xs"
-								radius="xl"
-								sx={{ cursor: "default" }}
-							>
-								{icon}
-							</ActionIcon>
-						);
-
-						return (
-							<Badge mb="xs" mx={4} leftSection={Icon} key={i}>
-								{name}
-							</Badge>
-						);
-					})}
+					{technologies.map(({ name, icon }, i) => (
+						<IconBadge
+							mb="xs"
+							mx={4}
+							icon={icon}
+							ActionIconProps={{ color: "blue" }}
+							key={i}
+						>
+							{name}
+						</IconBadge>
+					))}
 					<Text>{bio}</Text>
 					<MediaQuery smallerThan="xs" styles={{ display: "none" }}>
 						<Box>
