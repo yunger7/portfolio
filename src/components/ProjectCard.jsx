@@ -31,8 +31,22 @@ export function ProjectCard({ project }) {
 	}
 
 	return (
-		<GlassCard shadow="sm" backgroundOpacity={0.1}>
-			<Center sx={{ width: "100%", height: "100%" }}>{renderLogo()}</Center>
-		</GlassCard>
+		<Box
+			sx={{
+				width: "100%",
+				height: "100%",
+				minHeight: 200,
+
+				"& > *": {
+					width: "100%",
+					height: "100%",
+					cursor: "pointer",
+				},
+			}}
+		>
+			<GlassCard shadow="sm" backgroundOpacity={0.1}>
+				<Center sx={{ width: "100%", height: "100%" }}>{renderLogo()}</Center>
+			</GlassCard>
+		</Box>
 	);
 }
