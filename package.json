@@ -16,6 +16,7 @@
 		"@mantine/next": "^4.2.10",
 		"@mantine/notifications": "^4.2.10",
 		"@mantine/spotlight": "^4.2.10",
+		"@notionhq/client": "^1.0.4",
 		"@octokit/rest": "^18.12.0",
 		"cookies-next": "^2.0.4",
 		"next": "12.1.6",
