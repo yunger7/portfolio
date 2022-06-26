@@ -11,6 +11,7 @@ const shadowValues = {
 
 export function GlassCard({
 	children,
+	onClick,
 	shadow = "md",
 	backgroundOpacity = 0.15,
 }) {
@@ -29,6 +30,7 @@ export function GlassCard({
 		>
 			<Box
 				p="xl"
+				onClick={onClick}
 				sx={theme => ({
 					width: "100%",
 					height: "100%",
