@@ -132,7 +132,11 @@ function Details({ project }) {
 			{technologies.length > 0 && (
 				<Group mt="sm">
 					{technologies.map(({ name, icon }) => (
-						<IconBadge icon={icon} ActionIconProps={{ color: "blue" }}>
+						<IconBadge
+							icon={icon}
+							ActionIconProps={{ color: "blue" }}
+							key={name}
+						>
 							{name}
 						</IconBadge>
 					))}
