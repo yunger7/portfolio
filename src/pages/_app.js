@@ -7,6 +7,8 @@ import { MantineProvider, ColorSchemeProvider } from "@mantine/core";
 import { useHotkeys } from "@mantine/hooks";
 import { NotificationsProvider } from "@mantine/notifications";
 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 export default function App(props) {
 	const { Component, pageProps } = props;
 	const [colorScheme, setColorScheme] = useState(props.colorScheme);
