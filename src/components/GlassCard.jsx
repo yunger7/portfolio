@@ -1,5 +1,5 @@
 import Tilt from "react-parallax-tilt";
-import { Box, useMantineTheme } from "@mantine/core";
+import { UnstyledButton, useMantineTheme } from "@mantine/core";
 
 const shadowValues = {
 	xs: 0.05,
@@ -28,7 +28,7 @@ export function GlassCard({
 			glarePosition="all"
 			glareBorderRadius={`${theme.radius.sm}px`}
 		>
-			<Box
+			<UnstyledButton
 				p="xl"
 				onClick={onClick}
 				sx={theme => ({
@@ -52,7 +52,7 @@ export function GlassCard({
 				})}
 			>
 				{children}
-			</Box>
+			</UnstyledButton>
 		</Tilt>
 	);
 }
