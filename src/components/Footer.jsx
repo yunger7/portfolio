@@ -1,12 +1,4 @@
-import {
-	Box,
-	Container,
-	Group,
-	Text,
-	ActionIcon,
-	Anchor,
-	MediaQuery,
-} from "@mantine/core";
+import { Box, Container, Group, ActionIcon } from "@mantine/core";
 
 import { Logo } from "@/components";
 import { useDiscordTag } from "@/hooks";

@@ -1,13 +1,6 @@
 import { createContext } from "react";
 
-import {
-	Text,
-	Group,
-	Kbd,
-	UnstyledButton,
-	useMantineColorScheme,
-	createStyles,
-} from "@mantine/core";
+import { useMantineColorScheme } from "@mantine/core";
 import { useScrollIntoView } from "@mantine/hooks";
 import { SpotlightProvider } from "@mantine/spotlight";
 

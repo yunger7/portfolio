@@ -1,5 +1,3 @@
-import { useMantineColorScheme } from "@mantine/core";
-
 import { fetchGithubInfo, formatCommits } from "@/lib";
 
 import { Header, Footer } from "@/components";
@@ -8,8 +6,6 @@ import { Home, About, Projects, Contact } from "@/components/sections";
 import { about, firstCommitDate, location, bio } from "website.config";
 
 export default function LandingPage({ bio, about }) {
-	const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-
 	return (
 		<>
 			<Header />

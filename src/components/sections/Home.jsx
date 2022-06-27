@@ -1,13 +1,5 @@
 import Image from "next/image";
-import {
-	Title,
-	Text,
-	Box,
-	Badge,
-	ActionIcon,
-	Kbd,
-	MediaQuery,
-} from "@mantine/core";
+import { Title, Text, Box, Kbd, MediaQuery } from "@mantine/core";
 import { useOs } from "@mantine/hooks";
 
 import {
