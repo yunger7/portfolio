@@ -8,6 +8,8 @@ import { useHotkeys } from "@mantine/hooks";
 import { NotificationsProvider } from "@mantine/notifications";
 import { ModalsProvider } from "@mantine/modals";
 
+import { CommandMenuProvider } from "@/contexts";
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function App(props) {
@@ -47,9 +49,11 @@ export default function App(props) {
 				>
 					<ModalsProvider>
 						<NotificationsProvider autoClose={5000}>
-							<ParallaxProvider>
-								<Component {...pageProps} />
-							</ParallaxProvider>
+							<CommandMenuProvider>
+								<ParallaxProvider>
+									<Component {...pageProps} />
+								</ParallaxProvider>
+							</CommandMenuProvider>
 						</NotificationsProvider>
 					</ModalsProvider>
 				</MantineProvider>
