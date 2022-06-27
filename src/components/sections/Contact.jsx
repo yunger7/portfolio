@@ -16,9 +16,11 @@ import { showNotification } from "@mantine/notifications";
 
 import { User as NameIcon, At as EmailIcon } from "tabler-icons-react";
 
+import { useCommandMenu } from "@/hooks";
 import { contactSchema } from "@/utils";
 
 export function Contact() {
+	const { contactRef } = useCommandMenu();
 	const [loading, setLoading] = useState(false);
 
 	const form = useForm({
@@ -67,6 +69,7 @@ export function Contact() {
 
 	return (
 		<Box
+			ref={contactRef}
 			sx={{
 				position: "relative",
 				width: "100%",

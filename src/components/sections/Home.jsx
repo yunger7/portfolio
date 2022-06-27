@@ -16,14 +16,17 @@ import {
 	WaveDivider,
 	IconBadge,
 } from "@/components";
+import { useCommandMenu } from "@/hooks";
 
 import { username, technologies } from "website.config";
 
 export function Home({ bio }) {
 	const os = useOs();
+	const { homeRef } = useCommandMenu();
 
 	return (
 		<Box
+			ref={homeRef}
 			sx={{
 				position: "relative",
 				width: "100%",

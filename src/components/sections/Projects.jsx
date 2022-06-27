@@ -1,12 +1,16 @@
 import { Box, Container, SimpleGrid, Title, Text } from "@mantine/core";
 
 import { WaveDivider, GradientBackground, ProjectCard } from "@/components";
+import { useCommandMenu } from "@/hooks";
 
 import { projects } from "website.config";
 
 export function Projects() {
+	const { projectsRef } = useCommandMenu();
+
 	return (
 		<Box
+			ref={projectsRef}
 			sx={{
 				position: "relative",
 				width: "100%",

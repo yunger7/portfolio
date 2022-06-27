@@ -22,6 +22,7 @@ import {
 } from "tabler-icons-react";
 
 import { Skill } from "@/components";
+import { useCommandMenu } from "@/hooks";
 
 const useStyles = createStyles(theme => ({
 	react: {
@@ -140,10 +141,12 @@ const useStyles = createStyles(theme => ({
 
 export function About({ content }) {
 	const theme = useMantineTheme();
+	const { aboutRef } = useCommandMenu();
 	const { classes } = useStyles();
 
 	return (
 		<Box
+			ref={aboutRef}
 			sx={{
 				position: "relative",
 				width: "100%",
