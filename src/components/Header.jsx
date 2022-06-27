@@ -1,23 +1,19 @@
-import Image from "next/image";
-
 import {
 	Header as MantineHeader,
 	Container,
 	Group,
-	Burger,
-	Menu,
-	Text,
 	ActionIcon,
 	createStyles,
+	useMantineColorScheme,
 } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { NextLink } from "@mantine/next";
 
-import { useDiscordTag } from "@/hooks";
-import { SOCIAL } from "@/utils";
+import {
+	Command as CommandIcon,
+	Sun as LightThemeIcon,
+	Moon as DarkThemeIcon,
+} from "tabler-icons-react";
 
-import Logo from "public/logo.png";
-import { social, username } from "website.config";
+import { Logo } from "@/components";
 
 const useStyles = createStyles(theme => ({
 	header: {
@@ -45,136 +41,32 @@ const useStyles = createStyles(theme => ({
 			display: "none",
 		},
 	},
-
-	menu: {
-		[theme.fn.largerThan("xs")]: {
-			display: "none",
-		},
-	},
 }));
 
 export function Header() {
-	const [opened, handlers] = useDisclosure(false);
-	const { copyDiscordTag } = useDiscordTag();
+	const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 	const { classes } = useStyles();
-
-	function renderSocialMedia(type = "ActionIcon") {
-		const items = [];
-
-		for (const [name, href] of Object.entries(social)) {
-			let item;
-			const Icon = SOCIAL[name].icon;
-
-			switch (type) {
-				case "ActionIcon":
-					if (name === "discord") {
-						item = (
-							<ActionIcon
-								size="lg"
-								variant="hover"
-								onClick={copyDiscordTag}
-								aria-label={SOCIAL[name].name}
-								key={name}
-							>
-								<Icon size={18} />
-							</ActionIcon>
-						);
-					} else {
-						item = (
-							<ActionIcon
-								component="a"
-								target="_blank"
-								size="lg"
-								variant="hover"
-								href={href}
-								aria-label={SOCIAL[name].name}
-								key={name}
-							>
-								<Icon size={18} />
-							</ActionIcon>
-						);
-					}
-					break;
-				case "MenuItem":
-					if (name === "discord") {
-						item = (
-							<Menu.Item
-								icon={<Icon size={18} />}
-								onClick={copyDiscordTag}
-								key={name}
-							>
-								{SOCIAL[name].name}
-							</Menu.Item>
-						);
-					} else {
-						item = (
-							<Menu.Item
-								component="a"
-								href={href}
-								target="_blank"
-								icon={<Icon size={18} />}
-								key={name}
-							>
-								{SOCIAL[name].name}
-							</Menu.Item>
-						);
-					}
-					break;
-			}
-
-			if (item) items.push(item);
-		}
-
-		return items;
-	}
 
 	return (
 		<MantineHeader className={classes.header} height={60}>
 			<Container size="xl" className={classes.container}>
-				<Group spacing="xs">
-					<ActionIcon
-						variant="transparent"
-						component={NextLink}
-						href="/"
-						size="lg"
-					>
-						<Image priority src={Logo} alt="" width={32} height={32} />
-					</ActionIcon>
-					<Text
-						component="span"
-						size="lg"
-						variant="gradient"
-						weight={700}
-						gradient={{ from: "blue", to: "cyan" }}
-					>
-						{username}
-					</Text>
-				</Group>
-
+				<Logo />
 				<Group spacing={5} className={classes.links}>
-					{renderSocialMedia("ActionIcon")}
+					<ActionIcon
+						size="lg"
+						aria-label="Trocar tema"
+						onClick={() => toggleColorScheme()}
+					>
+						{colorScheme === "light" ? (
+							<DarkThemeIcon size={20} />
+						) : (
+							<LightThemeIcon size={20} />
+						)}
+					</ActionIcon>
+					<ActionIcon size="lg" aria-label="Comandos">
+						<CommandIcon size={20} />
+					</ActionIcon>
 				</Group>
-
-				<Menu
-					withArrow
-					closeOnItemClick
-					closeOnScroll
-					className={classes.menu}
-					menuButtonLabel="Links media sociais"
-					opened={opened}
-					onOpen={handlers.open}
-					onClose={handlers.close}
-					control={
-						<Burger
-							opened={opened}
-							onClick={() => handlers.toggle()}
-							size="sm"
-							aria-label={opened ? "Fechar navegação" : "Abrir navegação"}
-						/>
-					}
-				>
-					{renderSocialMedia("MenuItem")}
-				</Menu>
 			</Container>
 		</MantineHeader>
 	);
