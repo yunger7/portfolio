@@ -7,4 +7,5 @@ export * from "./ProjectCard";
 export * from "./Skill";
 export * from "./WaveBackground";
 export * from "./WaveDivider";
+export * from "./Footer";
 export * from "./Logo";
