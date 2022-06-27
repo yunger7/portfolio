@@ -9,3 +9,4 @@ export * from "./WaveBackground";
 export * from "./WaveDivider";
 export * from "./Footer";
 export * from "./Logo";
+export * from "./SmoothImage";
