@@ -1,4 +1,12 @@
-import { Box, Container, Group, Text, ActionIcon, Anchor } from "@mantine/core";
+import {
+	Box,
+	Container,
+	Group,
+	Text,
+	ActionIcon,
+	Anchor,
+	MediaQuery,
+} from "@mantine/core";
 
 import { Logo } from "@/components";
 import { useDiscordTag } from "@/hooks";
@@ -75,16 +83,6 @@ export function Footer() {
 				})}
 			>
 				<Logo />
-
-				<Group>
-					<Text size="sm" align="center">
-						Feito com 💙 e JavaScript <br />
-						por{" "}
-						<Anchor inherit href={social.github} target="_blank">
-							{username}
-						</Anchor>
-					</Text>
-				</Group>
 
 				<Group
 					noWrap
