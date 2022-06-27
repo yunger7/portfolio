@@ -1,5 +1,3 @@
-import NextImage from "next/image";
-
 import {
 	Center,
 	Box,
@@ -21,7 +19,7 @@ import {
 	Scale as LicenseIcon,
 } from "tabler-icons-react";
 
-import { GlassCard, IconBadge, ImageShowcase } from "@/components";
+import { GlassCard, IconBadge, ImageShowcase, SmoothImage } from "@/components";
 
 export function ProjectCard({ project }) {
 	const { title, logo } = project;
@@ -33,7 +31,7 @@ export function ProjectCard({ project }) {
 		switch (logo.type) {
 			case "image":
 				return (
-					<NextImage src={logo.image} alt={title} width={64} height={64} />
+					<SmoothImage src={logo.image} alt={title} width={64} height={64} />
 				);
 			case "icon":
 				return (

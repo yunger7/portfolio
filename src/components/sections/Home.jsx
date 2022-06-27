@@ -1,4 +1,4 @@
-import Image from "next/image";
+import NextImage from "next/image";
 import { Title, Text, Box, Kbd, MediaQuery } from "@mantine/core";
 import { useOs } from "@mantine/hooks";
 
@@ -7,6 +7,7 @@ import {
 	GlassCard,
 	WaveDivider,
 	IconBadge,
+	SmoothImage,
 } from "@/components";
 import { useCommandMenu } from "@/hooks";
 
@@ -28,7 +29,7 @@ export function Home({ bio }) {
 		>
 			<WaveBackground>
 				<GlassCard shadow="xl" sx={{ cursor: "default" }}>
-					<Image src="/logo.png" alt="" width={64} height={64} />
+					<SmoothImage src="/logo.png" alt="" width={64} height={64} />
 					<Title mb="sm" order={1}>
 						Olá, eu sou{" "}
 						<Text
