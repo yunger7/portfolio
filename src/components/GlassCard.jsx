@@ -1,5 +1,5 @@
 import Tilt from "react-parallax-tilt";
-import { UnstyledButton, useMantineTheme } from "@mantine/core";
+import { UnstyledButton, MediaQuery, useMantineTheme } from "@mantine/core";
 
 const shadowValues = {
 	xs: 0.05,
@@ -16,19 +16,8 @@ export function GlassCard({
 	backgroundOpacity = 0.15,
 	sx,
 }) {
-	const theme = useMantineTheme();
-
 	return (
-		<Tilt
-			gyroscope
-			glareEnable
-			tiltMaxAngleX={10}
-			tiltMaxAngleY={10}
-			glareColor={theme.white}
-			glareMaxOpacity={theme.colorScheme === "light" ? 0.6 : 0.4}
-			glarePosition="all"
-			glareBorderRadius={`${theme.radius.sm}px`}
-		>
+		<ConditionalTilt>
 			<UnstyledButton
 				p="xl"
 				onClick={onClick}
@@ -57,6 +46,31 @@ export function GlassCard({
 			>
 				{children}
 			</UnstyledButton>
-		</Tilt>
+		</ConditionalTilt>
+	);
+}
+
+function ConditionalTilt({ children }) {
+	const theme = useMantineTheme();
+
+	return (
+		<>
+			<MediaQuery smallerThan="sm" styles={{ display: "none" }}>
+				<Tilt
+					glareEnable
+					tiltMaxAngleX={10}
+					tiltMaxAngleY={10}
+					glareColor={theme.white}
+					glareMaxOpacity={theme.colorScheme === "light" ? 0.6 : 0.4}
+					glarePosition="all"
+					glareBorderRadius={`${theme.radius.sm}px`}
+				>
+					{children}
+				</Tilt>
+			</MediaQuery>
+			<MediaQuery largerThan="sm" styles={{ display: "none" }}>
+				{children}
+			</MediaQuery>
+		</>
 	);
 }
