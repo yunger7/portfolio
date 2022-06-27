@@ -2,7 +2,7 @@ import { useMantineColorScheme } from "@mantine/core";
 
 import { fetchGithubInfo, formatCommits } from "@/lib";
 
-import { Header } from "@/components";
+import { Header, Footer } from "@/components";
 import { Home, About, Projects, Contact } from "@/components/sections";
 
 import { about, firstCommitDate, location, bio } from "website.config";
@@ -17,6 +17,7 @@ export default function LandingPage({ bio, about }) {
 			<About content={about} />
 			<Projects />
 			<Contact />
+			<Footer />
 		</>
 	);
 }
