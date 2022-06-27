@@ -36,12 +36,6 @@ const useStyles = createStyles(theme => ({
 		alignItems: "center",
 		height: "100%",
 	},
-
-	links: {
-		[theme.fn.smallerThan("xs")]: {
-			display: "none",
-		},
-	},
 }));
 
 export function Header() {
@@ -53,7 +47,7 @@ export function Header() {
 		<MantineHeader className={classes.header} height={60}>
 			<Container size="xl" className={classes.container}>
 				<Logo />
-				<Group spacing={5} className={classes.links}>
+				<Group spacing={5}>
 					<ActionIcon
 						size="lg"
 						aria-label="Trocar tema"
