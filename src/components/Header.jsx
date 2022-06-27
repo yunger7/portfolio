@@ -6,6 +6,7 @@ import {
 	createStyles,
 	useMantineColorScheme,
 } from "@mantine/core";
+import { useSpotlight } from "@mantine/spotlight";
 
 import {
 	Command as CommandIcon,
@@ -44,6 +45,7 @@ const useStyles = createStyles(theme => ({
 }));
 
 export function Header() {
+	const spotlight = useSpotlight();
 	const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 	const { classes } = useStyles();
 
@@ -63,7 +65,11 @@ export function Header() {
 							<LightThemeIcon size={20} />
 						)}
 					</ActionIcon>
-					<ActionIcon size="lg" aria-label="Comandos">
+					<ActionIcon
+						size="lg"
+						aria-label="Comandos"
+						onClick={() => spotlight.toggleSpotlight()}
+					>
 						<CommandIcon size={20} />
 					</ActionIcon>
 				</Group>
