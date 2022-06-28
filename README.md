@@ -8,7 +8,7 @@
     <a href="https://luisgalete.com.br/" target="_blank"><img src="https://img.shields.io/website?down_color=BF616A&label=Website&style=flat-square&up_color=88C0D0&colorA=4c566a&colorB=5E81AC&url=https%3A%2F%2Fluisgalete.com.br" /></a>
     <img src="https://img.shields.io/github/last-commit/yunger7/portfolio?colorA=4c566a&colorB=5E81AC&label=Latest%20commit&logo=github&logoColor=ECEFF4&style=flat-square" />
     <img src="https://img.shields.io/github/languages/code-size/yunger7/portfolio?colorA=4c566a&colorB=5E81AC&label=Code%20size&logo=github&logoColor=ECEFF4&style=flat-square" />
-    <img src="https://img.shields.io/tokei/lines/github/yunger7/portfolio?colorA=4c566a&colorB=5E81AC&label=Total%20lines&logo=github&logoColor=ECEFF4&style=flat-square" />
+    <!-- <img src="https://img.shields.io/tokei/lines/github/yunger7/portfolio?colorA=4c566a&colorB=5E81AC&label=Total%20lines&logo=github&logoColor=ECEFF4&style=flat-square" /> -->
     <img src="https://img.shields.io/github/languages/top/yunger7/portfolio?colorA=4c566a&colorB=5E81AC&label=Javascript&logo=javascript&logoColor=ECEFF4&style=flat-square" />
     <img src="https://img.shields.io/github/license/yunger7/portfolio?colorA=4c566a&colorB=5E81AC&label=License&logo=github&logoColor=ECEFF4&style=flat-square" />
   </p>
