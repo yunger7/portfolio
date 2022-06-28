@@ -155,7 +155,10 @@ export function About({ content }) {
 			}}
 		>
 			<Container size="xl" py="10vh" sx={{ width: "100%", height: "100%" }}>
-				<Grid justify="space-between" sx={{ width: "100%", height: "100%" }}>
+				<Grid
+					justify="space-between"
+					sx={{ width: "100%", height: "100%", margin: 0 }}
+				>
 					<Grid.Col className={classes.react} sm={3} md={4}>
 						<Skill size="medium" icon={ReactIcon} animationDelay={1000} />
 					</Grid.Col>
