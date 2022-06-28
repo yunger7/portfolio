@@ -135,7 +135,7 @@ export function CommandMenuProvider({ children }) {
 				},
 				{
 					title: "Ver código fonte",
-					description: "Veja o código open-source desse website",
+					description: "Não se esqueça de dar uma estrelinha :)",
 					onTrigger: () =>
 						window
 							.open("https://github.com/yunger7/portfolio", "_blank")
