@@ -1,10 +1,9 @@
 import Head from "next/head";
-import { useState } from "react";
 import { getCookie, setCookies } from "cookies-next";
 import { ParallaxProvider } from "react-scroll-parallax";
 
 import { MantineProvider, ColorSchemeProvider } from "@mantine/core";
-import { useHotkeys } from "@mantine/hooks";
+import { useHotkeys, useLocalStorage } from "@mantine/hooks";
 import { NotificationsProvider } from "@mantine/notifications";
 import { ModalsProvider } from "@mantine/modals";
 
@@ -14,13 +13,16 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function App(props) {
 	const { Component, pageProps } = props;
-	const [colorScheme, setColorScheme] = useState(props.colorScheme);
+	const [colorScheme, setColorScheme] = useLocalStorage({
+		key: "color-scheme",
+		defaultValue: props.colorScheme || "light",
+		getInitialValueInEffect: true,
+	});
 
 	const toggleColorScheme = value => {
 		const nextColorScheme =
 			value || (colorScheme === "dark" ? "light" : "dark");
 		setColorScheme(nextColorScheme);
-
 		setCookies("color-scheme", nextColorScheme, { maxAge: 60 * 60 * 24 * 30 });
 	};
 
