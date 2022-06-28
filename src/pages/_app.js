@@ -1,37 +1,69 @@
 import Head from "next/head";
-import { CacheProvider } from "@emotion/react";
-import PropTypes from "prop-types";
+import { getCookie, setCookies } from "cookies-next";
+import { ParallaxProvider } from "react-scroll-parallax";
 
-import { CssBaseline } from "@mui/material";
-import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
+import { MantineProvider, ColorSchemeProvider } from "@mantine/core";
+import { useHotkeys, useLocalStorage } from "@mantine/hooks";
+import { NotificationsProvider } from "@mantine/notifications";
+import { ModalsProvider } from "@mantine/modals";
 
-import { createEmotionCache } from "../lib/createEmotionCache";
-import { dark, light } from "../styles/theme";
+import { CommandMenuProvider } from "@/contexts";
 
-import "../styles/globals.css";
-
-const clientSideEmotionCache = createEmotionCache();
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function App(props) {
-	const { Component, pageProps, emotionCache = clientSideEmotionCache } = props;
+	const { Component, pageProps } = props;
+	const [colorScheme, setColorScheme] = useLocalStorage({
+		key: "color-scheme",
+		defaultValue: props.colorScheme || "light",
+		getInitialValueInEffect: true,
+	});
+
+	const toggleColorScheme = value => {
+		const nextColorScheme =
+			value || (colorScheme === "dark" ? "light" : "dark");
+		setColorScheme(nextColorScheme);
+		setCookies("color-scheme", nextColorScheme, { maxAge: 60 * 60 * 24 * 30 });
+	};
+
+	useHotkeys([["mod+j", () => toggleColorScheme()]]);
 
 	return (
-		<CacheProvider value={emotionCache}>
+		<>
 			<Head>
-				<meta name="viewport" content="initial-scale=1, width=device-width" />
+				<title>Luís Galete | Portfolio</title>
+				<meta
+					name="viewport"
+					content="minimum-scale=1, initial-scale=1, width=device-width"
+				/>
 			</Head>
-			<StyledEngineProvider injectFirst>
-				<ThemeProvider theme={light}>
-					<CssBaseline />
-					<Component {...pageProps} />
-				</ThemeProvider>
-			</StyledEngineProvider>
-		</CacheProvider>
+
+			<ColorSchemeProvider
+				colorScheme={colorScheme}
+				toggleColorScheme={toggleColorScheme}
+			>
+				<MantineProvider
+					withGlobalStyles
+					withNormalizeCSS
+					theme={{
+						colorScheme,
+					}}
+				>
+					<ModalsProvider>
+						<NotificationsProvider autoClose={5000}>
+							<CommandMenuProvider>
+								<ParallaxProvider>
+									<Component {...pageProps} />
+								</ParallaxProvider>
+							</CommandMenuProvider>
+						</NotificationsProvider>
+					</ModalsProvider>
+				</MantineProvider>
+			</ColorSchemeProvider>
+		</>
 	);
 }
 
-App.propTypes = {
-	Component: PropTypes.elementType.isRequired,
-	emotionCache: PropTypes.object,
-	pageProps: PropTypes.object.isRequired,
-};
+App.getInitialProps = ({ ctx }) => ({
+	colorScheme: getCookie("color-scheme", ctx) || "light",
+});
