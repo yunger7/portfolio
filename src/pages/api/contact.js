@@ -1,7 +1,7 @@
 import { Client } from "@notionhq/client";
 
-const notion = new Client({ auth: process.env.NOTION_API_KEY });
-const messageDatabaseId = process.env.NOTION_MESSAGE_DATABASE_ID;
+const notion = new Client({ auth: process.env["NOTION_API_KEY"] });
+const messageDatabaseId = process.env["NOTION_MESSAGES_DATABASE_ID"];
 
 export default async function contact(request, response) {
 	console.log("[NEW REQUEST]: Send message");
