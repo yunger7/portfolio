@@ -31,7 +31,7 @@ export const location = "Nova Esperança - PR";
 
 export const firstCommitDate = new Date(2020, 2, 3); // Mar 3, 2020
 
-export const bio = `Sou um desenvolvedor Web localizado em {{ LOCATION }}, com {{ PROGRAMMING_AGE }} de experiência. Guiado pela criatividade e movido a cafeína, encontrei na programação uma paixão ― A ferramenta perfeita para tirar minhas ideias do papel.`;
+export const bio = `Sou um desenvolvedor Web localizado em {{ LOCATION }}, com {{ PROGRAMMING_AGE }} anos de experiência. Guiado pela criatividade e movido a cafeína, encontrei na programação uma paixão ― A ferramenta perfeita para tirar minhas ideias do papel.`;
 
 export const about =
 	'Desde o primeiro "Hello world", eu contribui com mais de {{ COMMITS }} commits, espalhados entre {{ REPOS }} repositórios diferentes. Meu foco, no entanto, não é apenas "programar por programar" ― Vejo a programação como uma ferramenta, capaz de solucionar problemas e dar vida a ideias.';
@@ -222,7 +222,7 @@ export const projects = [
 	},
 	{
 		title: "TCC SENAI",
-		description: `Meu trabalho de conclusão de curso no SENAI. Trata-se de um sistema para o gerenciamento as reservas de veículos empresariais.`,
+		description: `Meu trabalho de conclusão de curso no SENAI. Trata-se de um sistema para gerenciar reservas de veículos empresariais.`,
 		status: "archived",
 		tags: ["SENAI"],
 		source: "https://github.com/yunger7/tcc-senai",
