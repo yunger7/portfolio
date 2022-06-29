@@ -83,7 +83,12 @@ export function ProjectCard({ project }) {
 				},
 			}}
 		>
-			<GlassCard shadow="sm" backgroundOpacity={0.1} onClick={showDetails}>
+			<GlassCard
+				title={title}
+				shadow="sm"
+				backgroundOpacity={0.1}
+				onClick={showDetails}
+			>
 				<Stack
 					spacing={4}
 					align="center"
