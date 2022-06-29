@@ -1,5 +1,4 @@
 import {
-	Center,
 	Box,
 	Title,
 	Text,
