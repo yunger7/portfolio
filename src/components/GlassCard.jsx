@@ -15,10 +15,12 @@ export function GlassCard({
 	shadow = "md",
 	backgroundOpacity = 0.15,
 	sx,
+	...props
 }) {
 	return (
 		<ConditionalTilt>
 			<UnstyledButton
+				{...props}
 				p="xl"
 				onClick={onClick}
 				sx={theme => [
