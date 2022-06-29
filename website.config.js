@@ -30,7 +30,7 @@ export const githubUsername = "yunger7";
 export const location = "Nova Esperança - PR";
 
 export const meta = {
-	title: `${username} | Portfolio`,
+	title: `${username} | Portfólio`,
 	description: `O portfólio de ${username}, um programador Web focado em construir soluções elegantes para problemas complexos.`,
 };
 
