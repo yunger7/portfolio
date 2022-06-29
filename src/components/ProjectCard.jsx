@@ -1,5 +1,4 @@
 import {
-	Center,
 	Box,
 	Title,
 	Text,
@@ -32,7 +31,13 @@ export function ProjectCard({ project }) {
 		switch (logo.type) {
 			case "image":
 				return (
-					<SmoothImage src={logo.image} alt={title} width={64} height={64} />
+					<SmoothImage
+						src={logo.image}
+						alt={title}
+						width={64}
+						height={64}
+						quality={100}
+					/>
 				);
 			case "icon":
 				return (

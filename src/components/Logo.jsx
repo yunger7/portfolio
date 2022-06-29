@@ -22,6 +22,7 @@ export function Logo({ priority }) {
 					alt=""
 					width={32}
 					height={32}
+					quality={100}
 				/>
 			</ActionIcon>
 			<Text
