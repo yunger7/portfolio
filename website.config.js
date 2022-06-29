@@ -29,6 +29,11 @@ export const username = "Luís Galete";
 export const githubUsername = "yunger7";
 export const location = "Nova Esperança - PR";
 
+export const meta = {
+	title: `${username} | Portfolio`,
+	description: `O portfólio de ${username}, um programador Web focado em construir soluções elegantes para problemas complexos.`,
+};
+
 export const firstCommitDate = new Date(2020, 2, 3); // Mar 3, 2020
 
 export const bio = `Sou um desenvolvedor Web localizado em {{ LOCATION }}, com {{ PROGRAMMING_AGE }} anos de experiência. Guiado pela criatividade e movido a cafeína, encontrei na programação uma paixão ― A ferramenta perfeita para tirar minhas ideias do papel.`;
