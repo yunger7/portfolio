@@ -7,6 +7,7 @@ import {
 	Button,
 	Card,
 	Divider,
+	Stack,
 	useMantineTheme,
 } from "@mantine/core";
 import { useModals } from "@mantine/modals";
@@ -83,7 +84,17 @@ export function ProjectCard({ project }) {
 			}}
 		>
 			<GlassCard shadow="sm" backgroundOpacity={0.1} onClick={showDetails}>
-				<Center sx={{ width: "100%", height: "100%" }}>{renderLogo()}</Center>
+				<Stack
+					spacing={4}
+					align="center"
+					justify="center"
+					sx={{ width: "100%", height: "100%" }}
+				>
+					{renderLogo()}
+					<Text size="lg" weight={500} sx={theme => ({ color: theme.white })}>
+						{title}
+					</Text>
+				</Stack>
 			</GlassCard>
 		</Box>
 	);
