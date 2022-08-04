@@ -1,11 +1,12 @@
 import { Box, Container, SimpleGrid, Title, Text } from "@mantine/core";
 
 import { WaveDivider, GradientBackground, ProjectCard } from "@/components";
-import { useCommandMenu } from "@/hooks";
+import { useCommandMenu, useLanguage } from "@/hooks";
 
 import { projects } from "website.config";
 
 export function Projects() {
+	const { language } = useLanguage();
 	const { projectsRef } = useCommandMenu();
 
 	return (
@@ -35,7 +36,7 @@ export function Projects() {
 							margin: `${theme.spacing.xl * 2}px 0`,
 						})}
 					>
-						Ferramentas são para{" "}
+						{language == "en" ? "Tools are for " : "Ferramentas são para "}
 						<Text
 							inherit
 							component="span"
@@ -46,11 +47,11 @@ export function Projects() {
 									theme.colors.blue["6"]
 								),
 								paddingLeft: theme.spacing.xs,
-								paddingRight: theme.spacing.xs + 2,
+								paddingRight: theme.spacing.xs,
 								borderRadius: theme.radius.sm,
 							})}
 						>
-							construir
+							{language == "en" ? "building" : "construir"}
 						</Text>
 						.
 					</Title>
@@ -63,8 +64,8 @@ export function Projects() {
 						]}
 						sx={{ width: "100%", height: "50%" }}
 					>
-						{projects.map(project => (
-							<ProjectCard project={project} key={project.title} />
+						{projects.map((project, i) => (
+							<ProjectCard project={project} key={i} />
 						))}
 					</SimpleGrid>
 				</Container>

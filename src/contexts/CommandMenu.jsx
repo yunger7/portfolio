@@ -13,9 +13,10 @@ import {
 	Sun as LightThemeIcon,
 	Moon as DarkThemeIcon,
 	Code as CodeIcon,
+	LanguageHiragana as LanguageIcon,
 } from "tabler-icons-react";
 
-import { useDiscordTag } from "@/hooks";
+import { useDiscordTag, useLanguage } from "@/hooks";
 import { SOCIAL } from "@/utils";
 import { social } from "website.config";
 
@@ -28,6 +29,7 @@ export const CommandMenuContext = createContext({
 
 export function CommandMenuProvider({ children }) {
 	const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+	const { language, toggleLanguage } = useLanguage();
 	const { copyDiscordTag } = useDiscordTag();
 
 	const { targetRef: homeRef, scrollIntoView: scrollToHome } =
@@ -70,46 +72,63 @@ export function CommandMenuProvider({ children }) {
 			highlightColor="blue"
 			searchIcon={<SearchIcon size={18} />}
 			shortcut={["mod + P", "mod + K", "/"]}
-			searchPlaceholder="Pesquisar..."
-			nothingFoundMessage="Nenhum resultado encontrado"
+			searchPlaceholder={language == "en" ? "Search..." : "Pesquisar..."}
+			nothingFoundMessage={
+				language == "en" ? "No results found" : "Nenhum resultado encontrado"
+			}
 			actions={[
 				{
 					title: "Home",
-					description: "Voltar para o início",
+					description:
+						language == "en" ? "Go back to the top" : "Voltar para o início",
 					onTrigger: () => scrollToHome(),
 					icon: <HomeIcon size={18} />,
 					keywords: ["geral", "general"],
-					group: "Geral",
+					group: language == "en" ? "General" : "Geral",
 				},
 				{
-					title: "Sobre",
-					description: "Mais informações sobre mim",
+					title: language == "en" ? "About" : "Sobre",
+					description:
+						language == "en"
+							? "More information about me"
+							: "Mais informações sobre mim",
 					onTrigger: () => scrollToAbout(),
 					icon: <AboutIcon size={18} />,
-					keywords: ["geral", "general", "about", "info"],
-					group: "Geral",
+					keywords: ["geral", "general", "about me", "sobre mim", "info"],
+					group: language == "en" ? "General" : "Geral",
 				},
 				{
-					title: "Projetos",
-					description: "Veja alguns de meus projetos",
+					title: language == "en" ? "Projects" : "Projetos",
+					description:
+						language == "en"
+							? "See some of my projects"
+							: "Veja alguns de meus projetos",
 					onTrigger: () => scrollToProjects(),
 					icon: <ProjectsIcon size={18} />,
-					keywords: ["geral", "general", "projects"],
-					group: "Geral",
+					keywords: ["geral", "general", "projects", "projetos", "apps"],
+					group: language == "en" ? "General" : "Geral",
 				},
 				{
-					title: "Contato",
-					description: "Entre em contato comigo",
+					title: language == "en" ? "Contact" : "Contato",
+					description:
+						language == "en"
+							? "Get in touch with me"
+							: "Entre em contato comigo",
 					onTrigger: () => scrollToContact(),
 					icon: <ContactIcon size={18} />,
-					keywords: ["geral", "general", "contact"],
-					group: "Geral",
+					keywords: ["geral", "general", "contact", "contato"],
+					group: language == "en" ? "General" : "Geral",
 				},
 				{
-					title: "Trocar tema",
-					description: `Mudar para o tema ${
-						colorScheme === "light" ? "escuro" : "claro"
-					}`,
+					title: language == "en" ? "Change theme" : "Trocar tema",
+					description:
+						language == "en"
+							? `Change theme to ${
+									colorScheme === "light" ? "dark" : "light"
+							  } mode`
+							: `Mudar tema para o modo ${
+									colorScheme === "light" ? "escuro" : "claro"
+							  }`,
 					onTrigger: () => toggleColorScheme(),
 					icon:
 						colorScheme === "light" ? (
@@ -118,9 +137,10 @@ export function CommandMenuProvider({ children }) {
 							<LightThemeIcon size={18} />
 						),
 					keywords: [
-						"sistema",
 						"system",
+						"sistema",
 						"theme",
+						"tema",
 						"claro",
 						"escuro",
 						"light",
@@ -131,18 +151,49 @@ export function CommandMenuProvider({ children }) {
 						"mode",
 						"modo",
 					],
-					group: "Sistema",
+					group: language == "en" ? "System" : "Sistema",
 				},
 				{
-					title: "Ver código fonte",
-					description: "Não se esqueça de dar uma estrelinha :)",
+					title: language == "en" ? "Change language" : "Mudar idioma",
+					description:
+						language == "en"
+							? "Change the website language to Portuguese"
+							: "Mude o idioma do website para Inglês",
+					onTrigger: () => toggleLanguage(),
+					icon: <LanguageIcon size={18} />,
+					keywords: [
+						"system",
+						"sistema",
+						"language",
+						"idioma",
+						"english",
+						"portuguese",
+						"inglês",
+						"português",
+					],
+					group: language == "en" ? "System" : "Sistema",
+				},
+				{
+					title: language == "en" ? "View source code" : "Ver código fonte",
+					description:
+						language == "en"
+							? "Don't forget to leave a star :)"
+							: "Não se esqueça de dar uma estrelinha :)",
 					onTrigger: () =>
 						window
 							.open("https://github.com/yunger7/portfolio", "_blank")
 							.focus(),
 					icon: <CodeIcon size={18} />,
-					keywords: ["sistema", "system", "code", "codigo", "source"],
-					group: "Sistema",
+					keywords: [
+						"system",
+						"sistema",
+						"code",
+						"codigo",
+						"source",
+						"fonte",
+						"github",
+					],
+					group: language == "en" ? "System" : "Sistema",
 				},
 				...getSocialActions(),
 			]}

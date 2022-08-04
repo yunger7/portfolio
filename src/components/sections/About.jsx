@@ -22,7 +22,7 @@ import {
 } from "tabler-icons-react";
 
 import { Skill } from "@/components";
-import { useCommandMenu } from "@/hooks";
+import { useCommandMenu, useLanguage } from "@/hooks";
 
 const useStyles = createStyles(theme => ({
 	react: {
@@ -141,6 +141,7 @@ const useStyles = createStyles(theme => ({
 
 export function About({ content }) {
 	const theme = useMantineTheme();
+	const { language } = useLanguage();
 	const { aboutRef } = useCommandMenu();
 	const { classes } = useStyles();
 
@@ -207,14 +208,16 @@ export function About({ content }) {
 							>
 								<CodeIcon size={42} />
 								<Title order={2} weight="bold" mb="lg">
-									Programação é uma{" "}
+									{language == "en"
+										? "Programming is a "
+										: "Programação é uma "}
 									<Text
 										inherit
 										component="span"
 										variant="gradient"
 										gradient={{ from: "blue", to: "cyan" }}
 									>
-										ferramenta
+										{language == "en" ? "tool" : "ferramenta"}
 									</Text>
 									.
 								</Title>

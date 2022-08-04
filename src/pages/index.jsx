@@ -1,16 +1,30 @@
-import { fetchGithubInfo, formatCommits } from "@/lib";
+import Head from "next/head";
+import { useState, useEffect } from "react";
+import { fetchGithubInfo, getWebsiteInfo } from "@/lib";
+import { useLanguage } from "@/hooks";
 
 import { Header, Footer } from "@/components";
 import { Home, About, Projects, Contact } from "@/components/sections";
 
-import { about, firstCommitDate, location, bio } from "website.config";
+import { meta } from "website.config";
 
-export default function LandingPage({ bio, about }) {
+export default function LandingPage({ content: defaultContent, githubInfo }) {
+	const { language } = useLanguage();
+	const [content, setContent] = useState(defaultContent);
+
+	useEffect(() => {
+		setContent(getWebsiteInfo(language, githubInfo));
+	}, [language]);
+
 	return (
 		<>
+			<Head>
+				<title>{meta[language].title}</title>
+				<meta name="description" content={meta[language].description} />
+			</Head>
 			<Header />
-			<Home bio={bio} />
-			<About content={about} />
+			<Home bio={content.bio} />
+			<About content={content.about} />
 			<Projects />
 			<Contact />
 			<Footer />
@@ -20,27 +34,14 @@ export default function LandingPage({ bio, about }) {
 
 export async function getStaticProps() {
 	const GITHUB_ACCESS_TOKEN = process.env["GITHUB_ACCESS_TOKEN"];
-	const { totalCommits, totalRepos } = await fetchGithubInfo(
-		GITHUB_ACCESS_TOKEN
-	);
+	const githubInfo = await fetchGithubInfo(GITHUB_ACCESS_TOKEN);
 
-	let updatedBio = bio;
-	const programmingAge =
-		new Date().getFullYear() - firstCommitDate.getFullYear();
-	updatedBio = updatedBio.replace("{{ LOCATION }}", location);
-	updatedBio = updatedBio.replace("{{ PROGRAMMING_AGE }}", programmingAge);
-
-	let updatedAbout = about;
-	updatedAbout = updatedAbout.replace(
-		"{{ COMMITS }}",
-		formatCommits(totalCommits)
-	);
-	updatedAbout = updatedAbout.replace("{{ REPOS }}", totalRepos);
+	const websiteInfo = getWebsiteInfo("pt", githubInfo);
 
 	return {
 		props: {
-			about: updatedAbout,
-			bio: updatedBio,
+			githubInfo,
+			content: websiteInfo,
 		},
 		revalidate: 60 * 60 * 24,
 	};
