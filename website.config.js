@@ -27,19 +27,33 @@ import {
 
 export const username = "Luís Galete";
 export const githubUsername = "yunger7";
-export const location = "Nova Esperança - PR";
+export const location = {
+	pt: "Nova Esperança - PR",
+	en: "Brazil",
+};
 
 export const meta = {
-	title: `${username} | Portfólio`,
-	description: `O portfólio de ${username}, um programador Web focado em construir soluções elegantes para problemas complexos.`,
+	pt: {
+		title: `${username} | Portfólio`,
+		description: `O portfólio de ${username}, um programador Web focado em construir soluções elegantes para problemas complexos.`,
+	},
+	en: {
+		title: `${username} | Portfolio`,
+		description: `${username}'s portfolio, a Web developer focused in building elegant solutions to complex problems.`,
+	},
 };
 
 export const firstCommitDate = new Date(2020, 2, 3); // Mar 3, 2020
 
-export const bio = `Sou um desenvolvedor Web localizado em {{ LOCATION }}, com {{ PROGRAMMING_AGE }} anos de experiência. Guiado pela criatividade e movido a cafeína, encontrei na programação uma paixão ― A ferramenta perfeita para tirar minhas ideias do papel.`;
+export const bio = {
+	pt: "Sou um desenvolvedor Web localizado em {{ LOCATION }}, com {{ PROGRAMMING_AGE }} anos de experiência. Guiado pela criatividade e movido a cafeína, encontrei na programação uma paixão ― A ferramenta perfeita para tirar minhas ideias do papel.",
+	en: "I'm a web developer based in {{ LOCATION }}, with {{ PROGRAMMING_AGE }} years of experience. Driven by creativity and powered by caffeine, I found in programming a passion ― The perfect tool to get my ideas out off paper.",
+};
 
-export const about =
-	'Desde o primeiro "Hello world", eu contribui com mais de {{ COMMITS }} commits, espalhados entre {{ REPOS }} repositórios diferentes. Meu foco, no entanto, não é apenas "programar por programar" ― Vejo a programação como uma ferramenta, capaz de solucionar problemas e dar vida a ideias.';
+export const about = {
+	pt: 'Desde o primeiro "Hello world", eu contribui com mais de {{ COMMITS }} commits, espalhados entre {{ REPOS }} repositórios diferentes. Meu foco, no entanto, não é apenas "programar por programar" ― Vejo a programação como uma ferramenta, capaz de solucionar problemas e dar vida a ideias.',
+	en: 'Since the first "Hello world", I\'ve contributed with over {{ COMMITS }} commits, scattered across {{ REPOS }} different repositories. My focus, however, is not just to "code for the sake of coding" ― I see programming as a tool, capable of solving problems and bringing ideas to life.',
+};
 
 export const social = {
 	github: "https://github.com/yunger7",
@@ -58,8 +72,14 @@ export const technologies = [
 
 export const projects = [
 	{
-		title: "yunger.dev",
-		description: `Esta é minha oficina, o local onde mantenho meus projetos, ferramentas, compartilho ideias, faço networking e escrevo sobre assuntos de meu interesse.`,
+		title: {
+			pt: "yunger.dev",
+			en: "yunger.dev",
+		},
+		description: {
+			pt: "Esta é minha oficina, o local onde mantenho meus projetos, ferramentas, compartilho ideias, faço networking e escrevo sobre assuntos de meu interesse.",
+			en: "This is my workshop, the place where I keep my projects, tools, share ideas, do networking and write about things that I'm interested in.",
+		},
 		status: "active",
 		tags: ["Projeto pessoal"],
 		source: "https://github.com/yunger7/yunger.dev",
@@ -84,8 +104,14 @@ export const projects = [
 		],
 	},
 	{
-		title: "Portfolio",
-		description: `Este é o site que você está acessando no momento. É um local feito para me apresentar e expor alguns projetos.`,
+		title: {
+			pt: "Portfólio",
+			en: "Portfolio",
+		},
+		description: {
+			pt: "Este é o website que você está acessando no momento. É um local feito para me apresentar e expor alguns projetos.",
+			en: "This is the website you're currently seeing. It's a place made to tell a little bit about myself and showcase a few projects.",
+		},
 		status: "active",
 		tags: ["Projeto pessoal"],
 		source: "https://github.com/yunger7/portfolio",
@@ -107,8 +133,14 @@ export const projects = [
 		],
 	},
 	{
-		title: "Blueprints",
-		description: `Este repositório contém vários projetos ilustrativos, usados para auxiliar na explicação de algum post publicado na minha oficina.`,
+		title: {
+			pt: "Blueprints",
+			en: "Blueprints",
+		},
+		description: {
+			pt: "Este repositório é uma coleção de diversos projetos ilustrativos, usados para auxiliar na explicação de posts publicados na minha oficina.",
+			en: "This repository is a collection of various mock projects, used to help explain posts published at my workshop.",
+		},
 		status: "active",
 		tags: ["Projeto pessoal", "Monorepo"],
 		source: "https://github.com/yunger7/blueprints",
@@ -122,8 +154,14 @@ export const projects = [
 		technologies: [],
 	},
 	{
-		title: "Axew",
-		description: `Axew é um template HTML desenvolvido para profissionais que buscam divulgar seu trabalho. É o local ideal para expor habilidades e projetos realizados anteriormente.`,
+		title: {
+			pt: "Axew",
+			en: "Axew",
+		},
+		description: {
+			pt: "Axew é um template HTML desenvolvido para profissionais que buscam divulgar seu trabalho. É um ótimo local para expor habilidades e projetos realizados anteriormente.",
+			en: "Axew is a HTML template made for professionals looking to promote their work. It's a great place to showcase skills and previous projects.",
+		},
 		status: "active",
 		tags: ["Projeto pessoal", "Template"],
 		source: null,
@@ -147,8 +185,14 @@ export const projects = [
 		],
 	},
 	{
-		title: "Laboratory",
-		description: `Este repositório contém testes, projetos pequenos, arquivos de cursos e experimentos. É onde eu coloco a mão na massa para praticar assuntos que eu ainda não domino.`,
+		title: {
+			pt: "Laboratory",
+			en: "Laboratory",
+		},
+		description: {
+			pt: "Este repositório contém testes, projetos pequenos, arquivos de cursos e experimentos. É onde eu coloco a mão na massa para praticar assuntos que eu ainda não domino.",
+			en: "This repository is a collection of tests, small projects, course files and experiments that I've build over time. It's where I get my hands dirty and practice subjects that I want to learn.",
+		},
 		status: "active",
 		tags: ["Projeto pessoal", "Monorepo"],
 		source: "https://github.com/yunger7/laboratory",
@@ -162,8 +206,14 @@ export const projects = [
 		technologies: [],
 	},
 	{
-		title: "Ecoleta",
-		description: `Projeto realizado durante a Next Level Week #1. A aplicação tem o objetivo de facilitar a busca por pontos de coleta próximos ao usuário.`,
+		title: {
+			pt: "Ecoleta",
+			en: "Ecoleta",
+		},
+		description: {
+			pt: 'Um projeto realizado durante a "Next Level Week #1". A aplicação tem o objetivo de facilitar a busca por pontos de coleta de lixo próximos ao usuário.',
+			en: 'A project made during the "Next Level Week #1". The app aims to facilitate the search for trash collection points near the user.',
+		},
 		status: "archived",
 		tags: ["Rocketseat", "Next Level Week"],
 		source: "https://github.com/yunger7/Ecoleta",
@@ -188,8 +238,14 @@ export const projects = [
 		],
 	},
 	{
-		title: "Podcastr",
-		description: `Projeto realizado durante a Next Level Week #5. Trata-se um player web para escutar podcasts.`,
+		title: {
+			pt: "Podcastr",
+			en: "Podcastr",
+		},
+		description: {
+			pt: 'Um projeto realizado durante a "Next Level Week #5". Trata-se um player web para escutar podcasts.',
+			en: 'A project made during the "Next Level Week #5". It is a web player for listening to podcasts.',
+		},
 		status: "archived",
 		tags: ["Rocketseat", "Next Level Week"],
 		source: "https://github.com/yunger7/podcastr",
@@ -207,8 +263,14 @@ export const projects = [
 		],
 	},
 	{
-		title: "Letmeask",
-		description: `Projeto realizado durante a Next Level Week #6. A aplicação tem o objetivo de ajudar streamers a selecionarem perguntas de ouvintes para responder durante uma livestream.`,
+		title: {
+			pt: "Letmeask",
+			en: "Letmeask",
+		},
+		description: {
+			pt: 'Um projeto realizado durante a "Next Level Week #6". A aplicação tem o objetivo de ajudar streamers a selecionar perguntas de ouvintes para responder durante uma livestream.',
+			en: 'A project made during the "Next Level Week #6". The app aims to help streamers select questions from the audience to answer during a livestream.',
+		},
 		status: "archived",
 		tags: ["Rocketseat", "Next Level Week"],
 		source: "https://github.com/yunger7/letmeask",
@@ -226,8 +288,14 @@ export const projects = [
 		],
 	},
 	{
-		title: "TCC SENAI",
-		description: `Meu trabalho de conclusão de curso no SENAI. Trata-se de um sistema para gerenciar reservas de veículos empresariais.`,
+		title: {
+			pt: "TCC SENAI",
+			en: "TCC SENAI",
+		},
+		description: {
+			pt: "Meu trabalho de conclusão de curso no SENAI. Trata-se de um sistema para gerenciar reservas de veículos empresariais.",
+			en: "A project that I worked on during my Systems's Development course at SENAI. It aims to help companies manage their business vehicle reservations.",
+		},
 		status: "archived",
 		tags: ["SENAI"],
 		source: "https://github.com/yunger7/tcc-senai",
@@ -250,8 +318,14 @@ export const projects = [
 		],
 	},
 	{
-		title: "SENAI",
-		description: `Este repositório contém projetos, avaliações e exercícios realizados no curso de Desenvolvimento de Sistemas do SENAI CTM.`,
+		title: {
+			pt: "SENAI",
+			en: "SENAI",
+		},
+		description: {
+			pt: "Este repositório contém projetos, avaliações e exercícios realizados no curso de Desenvolvimento de Sistemas do SENAI CTM.",
+			en: 'This repository is a collection of projects, tests and exercises made during my System\'s development course at the "National Service of Industrial Apprenticeship".',
+		},
 		status: "archived",
 		tags: ["SENAI", "Monorepo"],
 		source: "https://github.com/yunger7/SENAI",
@@ -265,8 +339,14 @@ export const projects = [
 		technologies: [],
 	},
 	{
-		title: "Agenda",
-		description: `Uma agenda feita em PHP para treinar a construção de UIs e as 4 operações CRUD.`,
+		title: {
+			pt: "Agenda",
+			en: "Phone book",
+		},
+		description: {
+			pt: "Uma agenda feita em PHP para treinar a construção de UIs e as 4 operações CRUD.",
+			en: "A phone book made in PHP to practice UI development and the 4 CRUD operations.",
+		},
 		status: "archived",
 		tags: ["SENAI"],
 		source: "https://github.com/yunger7/Agenda",
@@ -291,8 +371,14 @@ export const projects = [
 		],
 	},
 	{
-		title: "Sistema de Vendas",
-		description: `Um sistema feito em PHP para treinar alguns conceitos básicos como conexão com banco de dados e consumo de bibliotecas.`,
+		title: {
+			pt: "Sistema de Vendas",
+			en: "Sales system",
+		},
+		description: {
+			pt: "Um sistema feito em PHP para treinar alguns conceitos básicos como conexão com banco de dados e consumo de bibliotecas.",
+			en: "An project made in PHP to practice a few basic concepts, such as interacting with databases and using third party libraries.",
+		},
 		status: "archived",
 		tags: ["SENAI"],
 		source: "https://github.com/yunger7/Sistema-de-vendas",

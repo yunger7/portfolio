@@ -19,9 +19,12 @@ import {
 	Scale as LicenseIcon,
 } from "tabler-icons-react";
 
+import { useLanguage } from "@/hooks";
 import { GlassCard, IconBadge, ImageShowcase, SmoothImage } from "@/components";
 
 export function ProjectCard({ project }) {
+	const { language } = useLanguage();
+
 	const { title, logo } = project;
 
 	const theme = useMantineTheme();
@@ -33,7 +36,7 @@ export function ProjectCard({ project }) {
 				return (
 					<SmoothImage
 						src={logo.image}
-						alt={title}
+						alt={title[language]}
 						width={64}
 						height={64}
 						quality={100}
@@ -71,7 +74,7 @@ export function ProjectCard({ project }) {
 			overlayOpacity: 0.25,
 			overlayBlur: 3,
 			centered: true,
-			children: <Details project={project} />,
+			children: <Details project={project} language={language} />,
 		});
 	}
 
@@ -89,7 +92,7 @@ export function ProjectCard({ project }) {
 			}}
 		>
 			<GlassCard
-				title={title}
+				title={title[language]}
 				shadow="sm"
 				backgroundOpacity={0.1}
 				onClick={showDetails}
@@ -102,7 +105,7 @@ export function ProjectCard({ project }) {
 				>
 					{renderLogo()}
 					<Text size="lg" weight={500} sx={theme => ({ color: theme.white })}>
-						{title}
+						{title[language]}
 					</Text>
 				</Stack>
 			</GlassCard>
@@ -110,7 +113,7 @@ export function ProjectCard({ project }) {
 	);
 }
 
-function Details({ project }) {
+function Details({ project, language }) {
 	const {
 		title,
 		description,
@@ -131,7 +134,7 @@ function Details({ project }) {
 		>
 			{images.length > 0 && <ImageShowcase images={images} />}
 			<Group mb="xs" mt="xl">
-				<Status variant={status} />
+				<Status variant={status} language={language} />
 				{license && (
 					<IconBadge
 						variant="outline"
@@ -144,9 +147,9 @@ function Details({ project }) {
 				)}
 			</Group>
 			<Title order={3} mb="xs">
-				{title}
+				{title[language]}
 			</Title>
-			<Text>{description}</Text>
+			<Text>{description[language]}</Text>
 			{technologies.length > 0 && (
 				<Group mt="sm">
 					{technologies.map(({ name, icon }) => (
@@ -172,7 +175,7 @@ function Details({ project }) {
 								variant={href ? "outline" : "filled"}
 								leftIcon={<GithubIcon />}
 							>
-								Código fonte
+								{language == "en" ? "Source code" : "Código fonte"}
 							</Button>
 						)}
 						{href && (
@@ -192,15 +195,15 @@ function Details({ project }) {
 	);
 }
 
-function Status({ variant }) {
+function Status({ variant, language }) {
 	const variants = {
 		active: {
-			text: "Ativo",
+			text: language == "en" ? "Active" : "Ativo",
 			color: "green",
 			icon: <ActiveIcon />,
 		},
 		archived: {
-			text: "Arquivado",
+			text: language == "en" ? "Archived" : "Arquivado",
 			color: "orange",
 			icon: <ArchivedIcon />,
 		},

@@ -8,12 +8,13 @@ import {
 	IconBadge,
 	SmoothImage,
 } from "@/components";
-import { useCommandMenu } from "@/hooks";
+import { useCommandMenu, useLanguage } from "@/hooks";
 
 import { username, technologies } from "website.config";
 
 export function Home({ bio }) {
 	const os = useOs();
+	const { language } = useLanguage();
 	const { homeRef } = useCommandMenu();
 
 	return (
@@ -36,7 +37,7 @@ export function Home({ bio }) {
 						quality={100}
 					/>
 					<Title mb="sm" order={1}>
-						Olá, eu sou{" "}
+						{language == "en" ? "Hey, I'm " : "Olá, eu sou "}
 						<Text
 							inherit
 							component="span"
@@ -62,13 +63,25 @@ export function Home({ bio }) {
 					<MediaQuery smallerThan="xs" styles={{ display: "none" }}>
 						<Box>
 							{(os === "macos" || os === "windows" || os === "linux") && (
-								<Text my="xs" size="sm">
-									Dica: Você também pode navegar neste site usando apenas o
-									teclado.
-									<br />
-									Aperte <Kbd>{os === "macos" ? "⌘" : "Ctrl"}</Kbd> +{" "}
-									<Kbd>K</Kbd> e confira {";)"}
-								</Text>
+								<>
+									{language == "en" ? (
+										<Text my="xs" size="sm">
+											Tip: You can also navigate through this website using only
+											your keyboard.
+											<br />
+											Press <Kbd>{os === "macos" ? "⌘" : "Ctrl"}</Kbd> +{" "}
+											<Kbd>K</Kbd> and check it out {";)"}
+										</Text>
+									) : (
+										<Text my="xs" size="sm">
+											Dica: Você também pode navegar neste site usando apenas o
+											teclado.
+											<br />
+											Aperte <Kbd>{os === "macos" ? "⌘" : "Ctrl"}</Kbd> +{" "}
+											<Kbd>K</Kbd> e confira {";)"}
+										</Text>
+									)}
+								</>
 							)}
 						</Box>
 					</MediaQuery>

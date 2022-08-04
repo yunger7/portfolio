@@ -7,9 +7,7 @@ import { useHotkeys, useLocalStorage } from "@mantine/hooks";
 import { NotificationsProvider } from "@mantine/notifications";
 import { ModalsProvider } from "@mantine/modals";
 
-import { CommandMenuProvider } from "@/contexts";
-
-import { meta } from "website.config";
+import { CommandMenuProvider, LanguageProvider } from "@/contexts";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -33,12 +31,10 @@ export default function App(props) {
 	return (
 		<>
 			<Head>
-				<title>{meta.title}</title>
 				<meta
 					name="viewport"
 					content="minimum-scale=1, initial-scale=1, width=device-width"
 				/>
-				<meta name="description" content={meta.description} />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
@@ -55,11 +51,13 @@ export default function App(props) {
 				>
 					<ModalsProvider>
 						<NotificationsProvider autoClose={5000}>
-							<CommandMenuProvider>
-								<ParallaxProvider>
-									<Component {...pageProps} />
-								</ParallaxProvider>
-							</CommandMenuProvider>
+							<LanguageProvider>
+								<CommandMenuProvider>
+									<ParallaxProvider>
+										<Component {...pageProps} />
+									</ParallaxProvider>
+								</CommandMenuProvider>
+							</LanguageProvider>
 						</NotificationsProvider>
 					</ModalsProvider>
 				</MantineProvider>

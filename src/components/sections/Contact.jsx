@@ -16,10 +16,11 @@ import { showNotification } from "@mantine/notifications";
 
 import { User as NameIcon, At as EmailIcon } from "tabler-icons-react";
 
-import { useCommandMenu } from "@/hooks";
+import { useCommandMenu, useLanguage } from "@/hooks";
 import { contactSchema } from "@/utils";
 
 export function Contact() {
+	const { language } = useLanguage();
 	const { contactRef } = useCommandMenu();
 	const [loading, setLoading] = useState(false);
 
@@ -79,14 +80,16 @@ export function Contact() {
 		>
 			<Container size="sm" py="10vh" sx={{ width: "100%", height: "100%" }}>
 				<Title order={2} align="center">
-					Que tal construir algo?{" "}
+					{language == "en"
+						? "How about we build something? "
+						: "Que tal construirmos algo? "}
 					<Text
 						inherit
 						component="span"
 						variant="gradient"
 						gradient={{ from: "blue", to: "cyan" }}
 					>
-						Juntos
+						{language == "en" ? "Together" : "Juntos"}
 					</Text>
 					.
 				</Title>
@@ -96,8 +99,8 @@ export function Contact() {
 							<TextInput
 								required
 								type="text"
-								label="Nome"
-								placeholder="Seu nome"
+								label={language == "en" ? "Name" : "Nome"}
+								placeholder={language == "en" ? "Your name" : "Seu nome"}
 								icon={<NameIcon size={14} />}
 								disabled={loading}
 								{...form.getInputProps("name")}
@@ -107,7 +110,9 @@ export function Contact() {
 								required
 								type="email"
 								label="Email"
-								placeholder="nome@email.com"
+								placeholder={
+									language == "en" ? "name@email.com" : "nome@email.com"
+								}
 								icon={<EmailIcon size={14} />}
 								disabled={loading}
 								{...form.getInputProps("email")}
@@ -116,8 +121,10 @@ export function Contact() {
 							<Textarea
 								autosize
 								required
-								label="Mensagem"
-								placeholder="Sua mensagem..."
+								label={language == "en" ? "Message" : "Mensagem"}
+								placeholder={
+									language == "en" ? "Your message..." : "Sua mensagem..."
+								}
 								minRows={4}
 								disabled={loading}
 								{...form.getInputProps("message")}
@@ -125,7 +132,7 @@ export function Contact() {
 
 							<Group grow position="center" mt="lg">
 								<Button type="submit" loading={loading} sx={{ maxWidth: 200 }}>
-									Enviar
+									{language == "en" ? "Send" : "Enviar"}
 								</Button>
 							</Group>
 						</Stack>
