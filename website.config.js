@@ -12,7 +12,9 @@ import {
 	BrandNotion as NotionIcon,
 	BrandGithub as GithubIcon,
 	BrandFirebase as FirebaseIcon,
+	DeviceLaptop as LaptopIcon,
 	TestPipe as LaboratoryIcon,
+	LetterZ as ZicottIcon,
 	Car as CarIcon,
 	Books as BooksIcon,
 	CalendarEvent as CalendarIcon,
@@ -186,6 +188,30 @@ export const projects = [
 	},
 	{
 		title: {
+			pt: "Zicott",
+			en: "Zicott",
+		},
+		description: {
+			pt: "Zicott é uma ferramenta CLI feita para baixar videos do YouTube como MP3.",
+			en: "Zicott is a CLI tool for quickly downloading YouTube videos as MP3.",
+		},
+		status: "active",
+		tags: ["Projeto pessoal"],
+		source: "https://github.com/yunger7/zicott",
+		href: null,
+		license: "MIT License",
+		logo: {
+			type: "icon",
+			icon: <ZicottIcon />,
+		},
+		images: [],
+		technologies: [
+			{ name: "TypeScript", icon: <CodeIcon /> },
+			{ name: "CLI", icon: <LaptopIcon /> },
+		],
+	},
+	{
+		title: {
 			pt: "Laboratory",
 			en: "Laboratory",
 		},
@@ -316,27 +342,6 @@ export const projects = [
 			{ name: "JavaScript", icon: <JavascriptIcon /> },
 			{ name: "Materialize CSS", icon: <UiIcon /> },
 		],
-	},
-	{
-		title: {
-			pt: "SENAI",
-			en: "SENAI",
-		},
-		description: {
-			pt: "Este repositório contém projetos, avaliações e exercícios realizados no curso de Desenvolvimento de Sistemas do SENAI CTM.",
-			en: 'This repository is a collection of projects, tests and exercises made during my System\'s development course at the "National Service of Industrial Apprenticeship".',
-		},
-		status: "archived",
-		tags: ["SENAI", "Monorepo"],
-		source: "https://github.com/yunger7/SENAI",
-		href: null,
-		license: "MIT License",
-		logo: {
-			type: "icon",
-			icon: <BooksIcon />,
-		},
-		images: [],
-		technologies: [],
 	},
 	{
 		title: {
