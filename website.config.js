@@ -228,7 +228,7 @@ export const projects = [
 			type: "icon",
 			icon: <ToolboxIcon />,
 		},
-		images: [],
+		images: ["/projects/toolbox/home.jpg", "/projects/toolbox/tool.jpg"],
 		technologies: [
 			{ name: "TypeScript", icon: <CodeIcon /> },
 			{ name: "React", icon: <ReactIcon /> },
