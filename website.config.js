@@ -30,7 +30,7 @@ import {
 export const username = "Luís Galete";
 export const githubUsername = "yunger7";
 export const location = {
-	pt: "Santa Heena - PR",
+	pt: "Santa Helena - PR",
 	en: "Brazil",
 };
 
