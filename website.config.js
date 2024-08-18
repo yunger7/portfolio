@@ -1,9 +1,9 @@
 import {
 	BrandJavascript as JavascriptIcon,
+    BrandTypescript as TypescriptIcon,
 	BrandReactNative as ReactIcon,
 	BrandNextjs as NextjsIcon,
 	BrandVercel as VercelIcon,
-	BrandVisualStudio as VscodeIcon,
 	BrandHtml5 as HtmlIcon,
 	BrandCss3 as CssIcon,
 	BrandPhp as PhpIcon,
@@ -24,8 +24,14 @@ import {
 	Recycle as RecycleIcon,
 	Headphones as HeadphonesIcon,
 	Message as MessageIcon,
-	Code as CodeIcon,
+    BrandTailwind as TailwindIcon,
 } from "tabler-icons-react";
+import {
+    SiArchlinux as ArchlinuxIcon,
+    SiVim as VimIcon,
+    SiRust as RustIcon,
+    SiMintlify as MintlifyIcon,
+} from "react-icons/si";
 
 export const username = "Luís Galete";
 export const githubUsername = "yunger7";
@@ -53,26 +59,56 @@ export const bio = {
 };
 
 export const about = {
-	pt: 'Desde o primeiro "Hello world", eu contribui com mais de {{ COMMITS }} commits, espalhados entre {{ REPOS }} repositórios diferentes. Meu foco, no entanto, não é apenas "programar por programar" ― Vejo a programação como uma ferramenta, capaz de solucionar problemas e dar vida a ideias.',
+	pt: 'Desde o primeiro "Hello world", contribui com mais de {{ COMMITS }} commits, espalhados entre {{ REPOS }} repositórios diferentes. Meu foco, no entanto, não é apenas "programar por programar" ― Vejo a programação como uma ferramenta, capaz de solucionar problemas e dar vida a ideias.',
 	en: 'Since the first "Hello world", I\'ve contributed with over {{ COMMITS }} commits, scattered across {{ REPOS }} different repositories. My focus, however, is not just to "code for the sake of coding" ― I see programming as a tool, capable of solving problems and bringing ideas to life.',
 };
 
 export const social = {
 	github: "https://github.com/yunger7",
 	reddit: "https://www.reddit.com/user/yunger_",
-	steam: "https://steamcommunity.com/id/yunger/",
-	discord: "yunger#3461",
+	steam: "https://steamcommunity.com/id/yunger",
+	discord: "yunger7",
 };
 
 export const technologies = [
-	{ name: "JavaScript", icon: <JavascriptIcon /> },
-	{ name: "React", icon: <ReactIcon /> },
+	{ name: "TypeScript", icon: <TypescriptIcon /> },
 	{ name: "Next.js", icon: <NextjsIcon /> },
-	{ name: "Vercel", icon: <VercelIcon /> },
-	{ name: "VSCode", icon: <VscodeIcon /> },
+    { name: "Rust", icon: <RustIcon size={24} /> },
+	{ name: "Arch", icon: <ArchlinuxIcon size={24} /> },
+	{ name: "Vim", icon: <VimIcon size={24} /> },
 ];
 
 export const projects = [
+    {
+		title: {
+			pt: "API ENEM",
+			en: "API ENEM",
+		},
+		description: {
+			pt: "Este projeto é uma API pública e open-source, criado para facilitar o acesso aos dados de provas e questões do Exame Nacional do Ensino Médio (ENEM) de forma programática.",
+			en: "This project is a public and open-source API, created to facilitate access to questions and exam data from the National High School Exam.",
+		},
+		status: "active",
+		tags: ["API"],
+		source: "https://github.com/yunger7/enem-api",
+		href: "https://enem.dev",
+		license: "GNU GPL-2.0",
+		logo: {
+			type: "image",
+			image: "/projects/enem-api/logo.svg",
+		},
+		images: [
+            "/projects/enem-api/home.png",
+            "/projects/enem-api/docs.png",
+        ],
+		technologies: [
+            { name: "TypeScript", icon: <TypescriptIcon /> },
+            { name: "Next.js", icon: <NextjsIcon /> },
+            { name: "Tailwind", icon: <TailwindIcon /> },
+            { name: "Neon", icon: <DatabaseIcon /> },
+            { name: "Mintlify", icon: <MintlifyIcon size={24} /> },
+        ],
+	},
 	{
 		title: {
 			pt: "yunger.dev",
@@ -82,7 +118,7 @@ export const projects = [
 			pt: "Esta é minha oficina, o local onde mantenho meus projetos, ferramentas, compartilho ideias, faço networking e escrevo sobre assuntos de meu interesse.",
 			en: "This is my workshop, the place where I keep my projects, tools, share ideas, do networking and write about things that I'm interested in.",
 		},
-		status: "active",
+		status: "archived",
 		tags: ["Projeto pessoal"],
 		source: "https://github.com/yunger7/yunger.dev",
 		href: "https://yunger.dev/",
@@ -123,7 +159,12 @@ export const projects = [
 			type: "image",
 			image: "/logo.png",
 		},
-		images: [],
+		images: [
+            "/projects/portfolio/home.png",
+            "/projects/portfolio/about.png",
+            "/projects/portfolio/projects.png",
+            "/projects/portfolio/contact.png",
+        ],
 		technologies: [
 			{ name: "JavaScript", icon: <JavascriptIcon /> },
 			{ name: "React", icon: <ReactIcon /> },
@@ -133,27 +174,6 @@ export const projects = [
 			{ name: "GitHub API", icon: <GithubIcon /> },
 			{ name: "Vercel", icon: <VercelIcon /> },
 		],
-	},
-	{
-		title: {
-			pt: "Blueprints",
-			en: "Blueprints",
-		},
-		description: {
-			pt: "Este repositório é uma coleção de diversos projetos ilustrativos, usados para auxiliar na explicação de posts publicados na minha oficina.",
-			en: "This repository is a collection of various mock projects, used to help explain posts published at my workshop.",
-		},
-		status: "active",
-		tags: ["Projeto pessoal", "Monorepo"],
-		source: "https://github.com/yunger7/blueprints",
-		href: null,
-		license: "MIT License",
-		logo: {
-			type: "image",
-			image: "/projects/blueprints/logo.png",
-		},
-		images: [],
-		technologies: [],
 	},
 	{
 		title: {
@@ -206,7 +226,7 @@ export const projects = [
 		},
 		images: [],
 		technologies: [
-			{ name: "TypeScript", icon: <CodeIcon /> },
+			{ name: "TypeScript", icon: <TypescriptIcon /> },
 			{ name: "CLI", icon: <LaptopIcon /> },
 		],
 	},
@@ -230,7 +250,7 @@ export const projects = [
 		},
 		images: ["/projects/toolbox/home.jpg", "/projects/toolbox/tool.jpg"],
 		technologies: [
-			{ name: "TypeScript", icon: <CodeIcon /> },
+			{ name: "TypeScript", icon: <TypescriptIcon /> },
 			{ name: "React", icon: <ReactIcon /> },
 			{ name: "Next.js", icon: <NextjsIcon /> },
 			{ name: "Mantine", icon: <UiIcon /> },
@@ -289,7 +309,7 @@ export const projects = [
 		},
 		images: ["/projects/podcastr/home.jpg", "/projects/podcastr/details.jpg"],
 		technologies: [
-			{ name: "TypeScript", icon: <CodeIcon /> },
+			{ name: "TypeScript", icon: <TypescriptIcon /> },
 			{ name: "React", icon: <ReactIcon /> },
 			{ name: "Next.js", icon: <NextjsIcon /> },
 		],
@@ -314,7 +334,7 @@ export const projects = [
 		},
 		images: ["/projects/letmeask/home.jpg", "/projects/letmeask/room.jpg"],
 		technologies: [
-			{ name: "TypeScript", icon: <CodeIcon /> },
+			{ name: "TypeScript", icon: <TypescriptIcon /> },
 			{ name: "React", icon: <ReactIcon /> },
 			{ name: "Firebase", icon: <FirebaseIcon /> },
 		],

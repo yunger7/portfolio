@@ -14,18 +14,20 @@ import {
 	BrandReactNative as ReactIcon,
 	BrandHtml5 as HtmlIcon,
 	BrandCss3 as CssIcon,
-	BrandJavascript as JavascriptIcon,
-	BrandNextjs as NextjsIcon,
-	BrandVercel as VercelIcon,
+    BrandTypescript as TypescriptIcon,
 	BrandFirebase as FirebaseIcon,
-	BrandVisualStudio as VscodeIcon,
 } from "tabler-icons-react";
+import {
+    SiVim as VimIcon,
+    SiRust as RustIcon,
+    SiArchlinux as ArchlinuxIcon,
+} from "react-icons/si";
 
 import { Skill } from "@/components";
 import { useCommandMenu, useLanguage } from "@/hooks";
 
 const useStyles = createStyles(theme => ({
-	react: {
+	firebase: {
 		display: "flex",
 		justifyContent: "flex-start",
 		alignItems: "center",
@@ -41,7 +43,7 @@ const useStyles = createStyles(theme => ({
 		},
 	},
 
-	javascript: {
+	typescript: {
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "flex-start",
@@ -82,7 +84,7 @@ const useStyles = createStyles(theme => ({
 		},
 	},
 
-	firebase: {
+	archlinux: {
 		display: "flex",
 		justifyContent: "flex-start",
 		alignItems: "center",
@@ -97,7 +99,7 @@ const useStyles = createStyles(theme => ({
 		},
 	},
 
-	vercel: {
+	rust: {
 		display: "flex",
 		justifyContent: "flex-end",
 		alignItems: "center",
@@ -113,7 +115,7 @@ const useStyles = createStyles(theme => ({
 		},
 	},
 
-	nextjs: {
+	react: {
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "flex-end",
@@ -123,7 +125,7 @@ const useStyles = createStyles(theme => ({
 		},
 	},
 
-	vscode: {
+	vim: {
 		display: "flex",
 		justifyContent: "flex-end",
 		alignItems: "center",
@@ -160,13 +162,13 @@ export function About({ content }) {
 					justify="space-between"
 					sx={{ width: "100%", height: "100%", margin: 0 }}
 				>
-					<Grid.Col className={classes.react} sm={3} md={4}>
-						<Skill size="medium" icon={ReactIcon} animationDelay={1000} />
+					<Grid.Col className={classes.firebase} sm={3} md={4}>
+						<Skill size="medium" icon={FirebaseIcon} animationDelay={1000} />
 					</Grid.Col>
-					<Grid.Col className={classes.javascript} sm={4} md={4}>
+					<Grid.Col className={classes.typescript} sm={4} md={4}>
 						<Skill
 							size="large"
-							icon={JavascriptIcon}
+							icon={TypescriptIcon}
 							animationVariant="2"
 							sx={{
 								[theme.fn.smallerThan("sm")]: { marginLeft: "40%" },
@@ -225,13 +227,13 @@ export function About({ content }) {
 							</Card>
 						</Center>
 					</Grid.Col>
-					<Grid.Col className={classes.vercel} sm={2}>
-						<Skill size="small" icon={VercelIcon} animationDelay={1500} />
+					<Grid.Col className={classes.rust} sm={2}>
+						<Skill size="small" icon={RustIcon} animationDelay={1500} />
 					</Grid.Col>
-					<Grid.Col className={classes.firebase} sm={3} md={4}>
+					<Grid.Col className={classes.archlinux} sm={3} md={4}>
 						<Skill
 							size="medium"
-							icon={FirebaseIcon}
+							icon={ArchlinuxIcon}
 							animationVariant="2"
 							sx={{
 								[theme.fn.smallerThan("sm")]: { marginLeft: "40%" },
@@ -239,10 +241,10 @@ export function About({ content }) {
 							}}
 						/>
 					</Grid.Col>
-					<Grid.Col className={classes.nextjs} sm={4} md={4}>
+					<Grid.Col className={classes.react} sm={4} md={4}>
 						<Skill
 							size="large"
-							icon={NextjsIcon}
+							icon={ReactIcon}
 							animationDelay={1000}
 							sx={{
 								[theme.fn.smallerThan("sm")]: { marginRight: "40%" },
@@ -250,10 +252,10 @@ export function About({ content }) {
 							}}
 						/>
 					</Grid.Col>
-					<Grid.Col className={classes.vscode} sm={3} md={4}>
+					<Grid.Col className={classes.vim} sm={3} md={4}>
 						<Skill
 							size="medium"
-							icon={VscodeIcon}
+							icon={VimIcon}
 							animationDelay={500}
 							animationVariant="3"
 						/>
