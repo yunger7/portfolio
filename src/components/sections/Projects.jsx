@@ -11,6 +11,7 @@ export function Projects() {
 
 	return (
 		<Box
+            id="projects"
 			ref={projectsRef}
 			sx={{
 				position: "relative",

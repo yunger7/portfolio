@@ -70,6 +70,7 @@ export function Contact() {
 
 	return (
 		<Box
+            id="contact"
 			ref={contactRef}
 			sx={{
 				position: "relative",

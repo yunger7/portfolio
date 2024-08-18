@@ -19,6 +19,7 @@ export function Home({ bio }) {
 
 	return (
 		<Box
+            id="home"
 			ref={homeRef}
 			sx={{
 				position: "relative",

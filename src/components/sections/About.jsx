@@ -149,6 +149,7 @@ export function About({ content }) {
 
 	return (
 		<Box
+            id="about"
 			ref={aboutRef}
 			sx={{
 				position: "relative",
