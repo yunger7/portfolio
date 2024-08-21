@@ -20,9 +20,10 @@ export function Footer() {
 				item = (
 					<ActionIcon
 						size="lg"
-						variant="hover"
+						variant="transparent"
 						onClick={copyDiscordTag}
 						aria-label={SOCIAL[name].name}
+                        mx={4}
 						key={name}
 					>
 						<Icon size={18} />
@@ -34,9 +35,10 @@ export function Footer() {
 						component="a"
 						target="_blank"
 						size="lg"
-						variant="hover"
+						variant="transparent"
 						href={href}
 						aria-label={SOCIAL[name].name}
+                        mx={4}
 						key={name}
 					>
 						<Icon size={18} />
