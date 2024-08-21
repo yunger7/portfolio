@@ -16,14 +16,13 @@ export function ImageShowcase({ images }) {
             controlSize={32}
         >
             {images.map(src => (
-                <Carousel.Slide>
+                <Carousel.Slide key={src}>
                     <Image
                         radius="sm"
                         src={src}
                         alt=""
                         width="100%"
                         height="100%"
-                        key={src}
                     />
                 </Carousel.Slide>
 			))}

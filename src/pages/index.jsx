@@ -14,7 +14,7 @@ export default function LandingPage({ content: defaultContent, githubInfo }) {
 
 	useEffect(() => {
 		setContent(getWebsiteInfo(language, githubInfo));
-	}, [language]);
+	}, [language, githubInfo]);
 
 	return (
 		<>
