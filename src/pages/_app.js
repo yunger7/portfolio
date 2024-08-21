@@ -9,8 +9,6 @@ import { ModalsProvider } from "@mantine/modals";
 
 import { CommandMenuProvider, LanguageProvider } from "@/contexts";
 
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-
 export default function App(props) {
 	const { Component, pageProps } = props;
 	const [colorScheme, setColorScheme] = useLocalStorage({

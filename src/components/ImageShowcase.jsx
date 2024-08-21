@@ -1,4 +1,4 @@
-import { Carousel } from "react-responsive-carousel";
+import { Carousel } from "@mantine/carousel";
 
 import { Image, ActionIcon, Center, UnstyledButton } from "@mantine/core";
 import {
@@ -10,51 +10,24 @@ export function ImageShowcase({ images }) {
 	if (!images) return;
 
 	return (
-		<Carousel
-			infiniteLoop
-			showStatus={false}
-			showThumbs={false}
-			labels={{
-				leftArrow: "Slide anterior",
-				rightArrow: "Próximo slide",
-				item: "Slide",
-			}}
-			renderArrowNext={(clickHandler, hasNext, label) => (
-				<ArrowButton
-					clickHandler={clickHandler}
-					hasNext={hasNext}
-					label={label}
-					direction="right"
-				/>
-			)}
-			renderArrowPrev={(clickHandler, hasNext, label) => (
-				<ArrowButton
-					clickHandler={clickHandler}
-					hasNext={hasNext}
-					label={label}
-					direction="left"
-				/>
-			)}
-			renderIndicator={(clickHandler, isSelected, index, label) => (
-				<Indicator
-					clickHandler={clickHandler}
-					isSelected={isSelected}
-					index={index}
-					label={label}
-				/>
-			)}
-		>
-			{images.map(src => (
-				<Image
-					radius="sm"
-					src={src}
-					alt=""
-					width="100%"
-					height="100%"
-					key={src}
-				/>
+        <Carousel
+            withIndicators
+            loop
+            controlSize={32}
+        >
+            {images.map(src => (
+                <Carousel.Slide>
+                    <Image
+                        radius="sm"
+                        src={src}
+                        alt=""
+                        width="100%"
+                        height="100%"
+                        key={src}
+                    />
+                </Carousel.Slide>
 			))}
-		</Carousel>
+        </Carousel>
 	);
 }
 
