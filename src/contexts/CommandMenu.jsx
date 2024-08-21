@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-import { ScrollArea, useMantineColorScheme } from "@mantine/core";
+import { useMantineColorScheme } from "@mantine/core";
 import { useScrollIntoView } from "@mantine/hooks";
 import { SpotlightProvider } from "@mantine/spotlight";
 
@@ -215,8 +215,8 @@ export function CommandMenuProvider({ children }) {
 
 function ActionsWrapper({ children }) {
   return (
-    <ScrollArea type="auto" style={{ height: 300 }}>
+    <div>
       {children}
-    </ScrollArea>
+    </div>
   );
 }
