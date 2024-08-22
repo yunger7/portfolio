@@ -224,7 +224,9 @@ export const projects = [
 			type: "icon",
 			icon: <ZicottIcon />,
 		},
-		images: [],
+		images: [
+            "/projects/zicott/cli.png",
+        ],
 		technologies: [
 			{ name: "TypeScript", icon: <TypescriptIcon /> },
 			{ name: "CLI", icon: <LaptopIcon /> },
