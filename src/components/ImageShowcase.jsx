@@ -9,6 +9,12 @@ import {
 export function ImageShowcase({ images }) {
 	if (!images) return;
 
+    if (images.length == 1) {
+        const src = images[0];
+
+        return <Image src={src} alt="" width="100%" height="100%" />;
+    }
+
 	return (
         <Carousel
             withIndicators
