@@ -4,7 +4,7 @@ import { Logo } from "@/components";
 import { useDiscordTag } from "@/hooks";
 import { SOCIAL } from "@/utils";
 
-import { social, username } from "website.config";
+import { social } from "website.config";
 
 export function Footer() {
 	const { copyDiscordTag } = useDiscordTag();

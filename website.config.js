@@ -69,8 +69,7 @@ export const about = {
 
 export const social = {
 	github: "https://github.com/yunger7",
-	reddit: "https://www.reddit.com/user/yunger_",
-	steam: "https://steamcommunity.com/id/yunger",
+    linkedin: "https://www.linkedin.com/in/luisgalete",
 	discord: "yunger7",
 };
 

@@ -1,8 +1,7 @@
 import {
 	BrandGithub as GithubIcon,
-	BrandReddit as RedditIcon,
-	BrandSteam as SteamIcon,
 	BrandDiscord as DiscordIcon,
+    BrandLinkedin as LinkedinIcon,
 } from "tabler-icons-react";
 
 export const SOCIAL = {
@@ -10,14 +9,10 @@ export const SOCIAL = {
 		name: "GitHub",
 		icon: GithubIcon,
 	},
-	reddit: {
-		name: "Reddit",
-		icon: RedditIcon,
-	},
-	steam: {
-		name: "Steam",
-		icon: SteamIcon,
-	},
+    linkedin: {
+        name: "LinkedIn",
+        icon: LinkedinIcon,
+    },
 	discord: {
 		name: "Discord",
 		icon: DiscordIcon,
