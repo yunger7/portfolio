@@ -45,6 +45,21 @@ export default function App(props) {
 					withNormalizeCSS
 					theme={{
 						colorScheme,
+                        globalStyles: (theme) => ({
+                            '::-webkit-scrollbar': {
+                                width: theme.spacing.xs,
+                            },
+                            '::-webkit-scrollbar-track': {
+                                backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
+                            },
+                            '::-webkit-scrollbar-thumb': {
+                                backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[5],
+                                borderRadius: theme.radius.xl,
+                            },
+                            '::-webkit-scrollbar-thumb:hover': {
+                                backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[6],
+                            },
+                        }),
 					}}
 				>
 					<ModalsProvider>
