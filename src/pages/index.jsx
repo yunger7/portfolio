@@ -21,6 +21,17 @@ export default function LandingPage({ content: defaultContent, githubInfo }) {
 			<Head>
 				<title>{meta[language].title}</title>
 				<meta name="description" content={meta[language].description} />
+                <meta name="author" content="Luis Galete" />
+                <meta property="og:title" content={meta[language].title} />
+                <meta property="og:description" content={meta[language].description} />
+                <meta property="og:image" content="https://luisgalete.com.br/opengraph.png" />
+                <meta property="og:url" content="https://luisgalete.com.br" />
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Luis Galete" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={meta[language].title} />
+                <meta name="twitter:description" content={meta[language].description} />
+                <meta name="twitter:image" content="https://luisgalete.com.br/opengraph.png" />
 			</Head>
 			<Header />
 			<Home bio={content.bio} />
