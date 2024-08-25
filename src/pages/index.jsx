@@ -6,7 +6,7 @@ import { useLanguage } from "@/hooks";
 import { Header, Footer } from "@/components";
 import { Home, About, Projects, Contact } from "@/components/sections";
 
-import { meta } from "website.config";
+import { baseUrl, meta } from "website.config";
 
 export default function LandingPage({ content: defaultContent, githubInfo }) {
 	const { language } = useLanguage();
@@ -21,6 +21,17 @@ export default function LandingPage({ content: defaultContent, githubInfo }) {
 			<Head>
 				<title>{meta[language].title}</title>
 				<meta name="description" content={meta[language].description} />
+                <meta name="author" content="Luis Galete" />
+                <meta property="og:title" content={meta[language].title} />
+                <meta property="og:description" content={meta[language].description} />
+                <meta property="og:image" content={`${baseUrl}/opengraph.png`} />
+                <meta property="og:url" content={baseUrl} />
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Luis Galete" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={meta[language].title} />
+                <meta name="twitter:description" content={meta[language].description} />
+                <meta name="twitter:image" content={`${baseUrl}/opengraph.png`} />
 			</Head>
 			<Header />
 			<Home bio={content.bio} />

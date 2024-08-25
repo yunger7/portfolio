@@ -40,6 +40,10 @@ export const location = {
 	en: "Brazil",
 };
 
+export const baseUrl = process.env.NODE_ENV === "development"
+    ? "http://localhost:3000"
+    : `https://${process.env.VERCEL_URL || "luisgalete.com.br"}`;
+
 export const meta = {
 	pt: {
 		title: `${username} | Portfólio`,
