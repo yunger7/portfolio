@@ -59,6 +59,12 @@ export default function App(props) {
                             '::-webkit-scrollbar-thumb:hover': {
                                 backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[6],
                             },
+                            '::selection': {
+                                backgroundColor: theme.colorScheme === 'dark'
+                                    ? theme.fn.rgba(theme.colors[theme.primaryColor][9], 0.45)
+                                    : theme.fn.rgba(theme.colors[theme.primaryColor][3], 0.45),
+                                color: theme.colorScheme === 'dark' ? theme.white : theme.black,
+                            },
                         }),
 					}}
 				>
