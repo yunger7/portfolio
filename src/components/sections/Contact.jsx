@@ -48,20 +48,31 @@ export function Contact() {
 			if (response.status != 200) throw new Error("Request failed");
 
 			showNotification({
-				title: "Mensagem enviada!",
-				message: "Sua mensagem foi encaminhada com sucesso",
+				title: language == "en"
+                    ? "Message sent!"
+                    : "Mensagem enviada!",
+				message: language == "en"
+                    ? "Your message was sent successfully"
+                    : "Sua mensagem foi encaminhada com sucesso",
 				color: "green",
-				closeButtonProps: "Fechar notificação",
+				closeButtonProps: language == "en"
+                    ? "Close notification"
+                    : "Fechar notificação",
 			});
 
 			form.reset();
 		} catch (error) {
 			showNotification({
-				title: "Wops! Parece que alguma coisa deu errado :(",
-				message:
-					"Houve um problema ao enviar sua mensagem, tente novamente mais tarde",
+				title: language == "en"
+                    ? "Wops! Looks like something went wrong :("
+                    : "Wops! Parece que alguma coisa deu errado :(",
+				message: language == "en"
+                    ? "There was an error sending your message, try again later"
+					: "Houve um problema ao enviar sua mensagem, tente novamente mais tarde",
 				color: "red",
-				closeButtonProps: "Fechar notificação",
+				closeButtonProps: language == "en"
+                    ? "Close notification"
+                    : "Fechar notificação",
 			});
 		}
 
