@@ -13,7 +13,7 @@ import {
 	BrandGithub as GithubIcon,
 	BrandFirebase as FirebaseIcon,
 	DeviceLaptop as LaptopIcon,
-	LetterZ as ZicottIcon,
+	Terminal2 as ZicottIcon,
 	Wand as ToolboxIcon,
 	Car as CarIcon,
 	Books as BooksIcon,
@@ -25,6 +25,7 @@ import {
 	Headphones as HeadphonesIcon,
 	Message as MessageIcon,
     BrandTailwind as TailwindIcon,
+    Package as PackageIcon,
 } from "tabler-icons-react";
 import {
     SiArchlinux as ArchlinuxIcon,
@@ -47,23 +48,23 @@ export const baseUrl = process.env.NODE_ENV === "development"
 export const meta = {
 	pt: {
 		title: `${username} | Portfólio`,
-		description: `O portfólio de ${username}, um programador Web focado em construir soluções elegantes para problemas complexos.`,
+		description: `O portfólio de ${username}, um programador full-stack focado em construir soluções elegantes para problemas complexos.`,
 	},
 	en: {
 		title: `${username} | Portfolio`,
-		description: `${username}'s portfolio, a Web developer focused in building elegant solutions to complex problems.`,
+		description: `${username}'s portfolio, a full-stack developer focused in building elegant solutions to complex problems.`,
 	},
 };
 
 export const firstCommitDate = new Date(2020, 2, 3); // Mar 3, 2020
 
 export const bio = {
-	pt: "Sou um desenvolvedor Web localizado em {{ LOCATION }}, com {{ PROGRAMMING_AGE }} anos de experiência. Guiado pela criatividade e movido a cafeína, encontrei na programação uma paixão ― A ferramenta perfeita para tirar minhas ideias do papel.",
-	en: "I'm a web developer based in {{ LOCATION }}, with {{ PROGRAMMING_AGE }} years of experience. Driven by creativity and powered by caffeine, I found in programming a passion ― The perfect tool to get my ideas out off paper.",
+	pt: "Sou um desenvolvedor full-stack localizado em {{ LOCATION }}, com {{ PROGRAMMING_AGE }} anos de experiência. Guiado pela criatividade e movido a cafeína, encontrei na programação uma paixão ― A ferramenta perfeita para tirar minhas ideias do papel.",
+	en: "I'm a full-stack developer based in {{ LOCATION }}, with {{ PROGRAMMING_AGE }} years of experience. Driven by creativity and powered by caffeine, I found in programming a passion ― The perfect tool to get my ideas off the paper.",
 };
 
 export const about = {
-	pt: 'Desde o primeiro "Hello world", contribui com mais de {{ COMMITS }} commits, espalhados entre {{ REPOS }} repositórios diferentes. Meu foco, no entanto, não é apenas "programar por programar" ― Vejo a programação como uma ferramenta, capaz de solucionar problemas e dar vida a ideias.',
+	pt: 'Desde o primeiro "Hello world", contribuí com mais de {{ COMMITS }} commits, espalhados entre {{ REPOS }} repositórios diferentes. Meu foco, no entanto, não é apenas "programar por programar" ― Vejo a programação como uma ferramenta, capaz de solucionar problemas e dar vida a ideias.',
 	en: 'Since the first "Hello world", I\'ve contributed with over {{ COMMITS }} commits, scattered across {{ REPOS }} different repositories. My focus, however, is not just to "code for the sake of coding" ― I see programming as a tool, capable of solving problems and bringing ideas to life.',
 };
 
@@ -89,7 +90,7 @@ export const projects = [
 		},
 		description: {
 			pt: "Este projeto é uma API pública e open-source, criado para facilitar o acesso aos dados de provas e questões do Exame Nacional do Ensino Médio (ENEM) de forma programática.",
-			en: "This project is a public and open-source API, created to facilitate access to questions and exam data from the National High School Exam.",
+			en: "This project is a public and open-source API, created to facilitate access to questions and exam data from Brazil's National High School Exam.",
 		},
 		status: "active",
 		tags: ["API"],
@@ -108,7 +109,7 @@ export const projects = [
             { name: "TypeScript", icon: <TypescriptIcon /> },
             { name: "Next.js", icon: <NextjsIcon /> },
             { name: "Tailwind", icon: <TailwindIcon /> },
-            { name: "Neon", icon: <DatabaseIcon /> },
+            { name: "PostgreSQL", icon: <DatabaseIcon /> },
             { name: "Mintlify", icon: <MintlifyIcon size={24} /> },
         ],
 	},
@@ -119,7 +120,7 @@ export const projects = [
 		},
 		description: {
 			pt: "Esta é minha oficina, o local onde mantenho meus projetos, ferramentas, compartilho ideias, faço networking e escrevo sobre assuntos de meu interesse.",
-			en: "This is my workshop, the place where I keep my projects, tools, share ideas, do networking and write about things that I'm interested in.",
+			en: "This is my workshop, the place where I keep my projects, tools, share ideas, network with people and write about things that I'm interested in.",
 		},
 		status: "archived",
 		tags: ["Projeto pessoal"],
@@ -185,7 +186,7 @@ export const projects = [
 		},
 		description: {
 			pt: "Axew é um template HTML desenvolvido para profissionais que buscam divulgar seu trabalho. É um ótimo local para expor habilidades e projetos realizados anteriormente.",
-			en: "Axew is a HTML template made for professionals looking to promote their work. It's a great place to showcase skills and previous projects.",
+			en: "Axew is a HTML template made for professionals seeking to promote their work. It's a great place to showcase skills and previous projects.",
 		},
 		status: "active",
 		tags: ["Projeto pessoal", "Template"],
@@ -215,13 +216,13 @@ export const projects = [
 			en: "Zicott",
 		},
 		description: {
-			pt: "Zicott é uma ferramenta CLI feita para baixar videos do YouTube como MP3.",
-			en: "Zicott is a CLI tool for quickly downloading YouTube videos as MP3.",
+			pt: "Zicott é uma ferramenta CLI, disponível no NPM, para facilitar o download de músicas do YouTube.",
+            en: "Zicott is a CLI tool, available on NPM, to easily download music from YouTube.",
 		},
 		status: "active",
 		tags: ["Projeto pessoal"],
 		source: "https://github.com/yunger7/zicott",
-		href: null,
+		href: "https://www.npmjs.com/package/zicott",
 		license: "MIT License",
 		logo: {
 			type: "icon",
@@ -233,6 +234,7 @@ export const projects = [
 		technologies: [
 			{ name: "TypeScript", icon: <TypescriptIcon /> },
 			{ name: "CLI", icon: <LaptopIcon /> },
+            { name: "NPM Package", icon: <PackageIcon /> },
 		],
 	},
 	{
@@ -268,8 +270,8 @@ export const projects = [
 			en: "Ecoleta",
 		},
 		description: {
-			pt: 'Um projeto realizado durante a "Next Level Week #1". A aplicação tem o objetivo de facilitar a busca por pontos de coleta de lixo próximos ao usuário.',
-			en: 'A project made during the "Next Level Week #1". The app aims to facilitate the search for trash collection points near the user.',
+			pt: 'Um projeto realizado durante a "Next Level Week #1" da Rocketseat. A aplicação tem o objetivo de facilitar a busca por pontos de coleta de lixo próximos ao usuário.',
+			en: 'A project made during Rocketseat\'s "Next Level Week #1". The app aims to facilitate the search for trash collection points near the user.',
 		},
 		status: "archived",
 		tags: ["Rocketseat", "Next Level Week"],
@@ -290,7 +292,6 @@ export const projects = [
 			{ name: "CSS3", icon: <CssIcon /> },
 			{ name: "JavaScript", icon: <JavascriptIcon /> },
 			{ name: "Express.js", icon: <BooksIcon /> },
-			{ name: "Nunjucks", icon: <BooksIcon /> },
 			{ name: "SQLite3", icon: <DatabaseIcon /> },
 		],
 	},
@@ -300,8 +301,8 @@ export const projects = [
 			en: "Podcastr",
 		},
 		description: {
-			pt: 'Um projeto realizado durante a "Next Level Week #5". Trata-se um player web para escutar podcasts.',
-			en: 'A project made during the "Next Level Week #5". It is a web player for listening to podcasts.',
+			pt: 'Um projeto realizado durante a "Next Level Week #5" da Rocketseat. Trata-se um player web para escutar podcasts.',
+			en: 'A project made during Rocketseat\'s "Next Level Week #5". It is a web player for listening to podcasts.',
 		},
 		status: "archived",
 		tags: ["Rocketseat", "Next Level Week"],
@@ -325,8 +326,8 @@ export const projects = [
 			en: "Letmeask",
 		},
 		description: {
-			pt: 'Um projeto realizado durante a "Next Level Week #6". A aplicação tem o objetivo de ajudar streamers a selecionar perguntas de ouvintes para responder durante uma livestream.',
-			en: 'A project made during the "Next Level Week #6". The app aims to help streamers select questions from the audience to answer during a livestream.',
+			pt: 'Um projeto realizado durante a "Next Level Week #6" da Rocketseat. A aplicação tem o objetivo de ajudar streamers a selecionar perguntas dos ouvintes para responder durante uma livestream.',
+			en: 'A project made during Rocketseat\'s "Next Level Week #6". The app aims to help streamers select questions from the audience to answer during a livestream.',
 		},
 		status: "archived",
 		tags: ["Rocketseat", "Next Level Week"],
@@ -346,12 +347,12 @@ export const projects = [
 	},
 	{
 		title: {
-			pt: "TCC SENAI",
-			en: "TCC SENAI",
+			pt: "S.R.V.",
+			en: "V.R.S.",
 		},
 		description: {
-			pt: "Meu trabalho de conclusão de curso no SENAI. Trata-se de um sistema para gerenciar reservas de veículos empresariais.",
-			en: "A project that I worked on during my Systems's Development course at SENAI. It aims to help companies manage their business vehicle reservations.",
+            pt: "O S.R.V. (Sistema de Reserva de Veículos) é uma solução para empresas gerenciarem seus cronogramas de reserva de veículos corporativos. Atualmente, o projeto está sendo utilizado em produção no Centro Tecnológico de Maringá.",
+			en: "The V.R.S. (Vehicle Reservation System) offers a solution for businesses to manage their corporate vehicles reservation schedules. The project is currently being used in production at Maringá's Technology Center.",
 		},
 		status: "archived",
 		tags: ["SENAI"],
@@ -412,8 +413,8 @@ export const projects = [
 			en: "Sales system",
 		},
 		description: {
-			pt: "Um sistema feito em PHP para treinar alguns conceitos básicos como conexão com banco de dados e consumo de bibliotecas.",
-			en: "An project made in PHP to practice a few basic concepts, such as interacting with databases and using third party libraries.",
+			pt: "Um sistema feito em PHP para treinar alguns conceitos básicos como conexão com banco de dados e uso de bibliotecas.",
+			en: "A project made in PHP to practice a few basic concepts, such as interacting with databases and using third party libraries.",
 		},
 		status: "archived",
 		tags: ["SENAI"],
