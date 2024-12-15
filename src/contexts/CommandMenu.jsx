@@ -14,6 +14,7 @@ import {
 	Moon as DarkThemeIcon,
 	Code as CodeIcon,
 	LanguageHiragana as LanguageIcon,
+    Download as ResumeIcon,
 } from "tabler-icons-react";
 
 import { useDiscordTag, useLanguage } from "@/hooks";
@@ -174,6 +175,29 @@ export function CommandMenuProvider({ children }) {
 					],
 					group: language == "en" ? "System" : "Sistema",
 				},
+                {
+                    title: language == "en" ? "Download resume" : "Baixar currículo",
+                    description:
+                        language == "en"
+                            ? "Download my resume in PDF format"
+                            : "Baixe o meu currículo em formato PDF",
+                    onTrigger: () => window.open(`${window.location.origin}/cv/${language}.pdf`, "_blank").focus(),
+                    icon: <ResumeIcon size={18} />,
+                    keywords: [
+                        'system',
+                        'sistema',
+                        'resume',
+                        'curriculo',
+                        'pdf',
+                        'download',
+                        'curriculum',
+                        'resume',
+                        'cv',
+                        'baixar',
+                        'download',
+                    ],
+                    group: language == "en" ? "System" : "Sistema",
+                },
 				{
 					title: language == "en" ? "View source code" : "Ver código fonte",
 					description:
